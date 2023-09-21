@@ -1,8 +1,13 @@
+import Products from "@/components/Products/Products";
+import HeroSection from "@/components/hero/heroSection";
 
 const HomePage = () => {
   return (
-    <div>HomePage</div>
-  )
-}
+    <>
+      <HeroSection />
+      <Products/>
+    </>
+  );
+};
 
-export default HomePage
+export default HomePage;

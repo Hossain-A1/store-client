@@ -2,3 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
+.wrapper{
+  @apply container mx-auto px-5 lg:px-0
+}
+.section-p {
+  @apply py-20 max-md:py-10;
+}
+.nav-lists {
+  @apply flex justify-between items-center gap-5;
+}
+.nav-lists {
+  @apply max-lg:w-full max-lg:h-full max-lg:absolute max-lg:top-0 max-lg:left-0 max-lg:bg-slate-200 max-lg:flex max-lg:justify-center max-lg:items-center max-lg:flex-col max-lg:opacity-0 max-lg:invisible max-lg:translate-x-0 origin-top h-full;
+}
+
+.active .nav-lists {
+  @apply max-lg:visible max-lg:opacity-100 max-lg:translate-x-0 max-lg:z-[9999]   h-full;
+}
+
+.mobile-navber-btn {
+  @apply hidden bg-transparent cursor-pointer border-none max-lg:inline-block max-lg:z-[9999] max-lg:border;
+}
+
+.mobile-navber-icon[name="close-outline"] {
+  @apply hidden max-lg:text-4xl max-lg:text-black;
+}
+
+.active .mobile-navber-icon {
+  @apply max-lg:hidden max-lg:text-4xl max-lg:absolute max-lg:top-[5%] max-lg:right-[5%] max-lg:text-black max-lg:z-[9999];
+}
+.close-outline {
+  @apply hidden;
+}
+.active .close-outline {
+  @apply max-lg:inline-block;
+}
+
+.active-color{
+  @apply opacity-100
+}
