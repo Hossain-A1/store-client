@@ -28,7 +28,7 @@ const HeroSection = () => {
             />
           </div>
 
-          <div className='bg-orange-500/80 h-[20rem] w-full absolute -top-10  bottom-5 z-[1] rounded-tl-3xl rounded-br-3xl'>
+          <div className='bg-orange/80 h-[20rem] w-full absolute -top-10  bottom-5 z-[1] rounded-tl-3xl rounded-br-3xl'>
            
            </div>
         </div>
