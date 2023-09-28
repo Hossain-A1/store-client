@@ -12,7 +12,7 @@ const Navber = () => {
       <nav className='wrapper    flex items-center justify-between   '>
         <div className=''>
           <h2 className='flex gap-1 text-xl '>
-            <span className='bg-orange text-black px-1 text-center'>
+            <span className='bg-orange px-3 text-black rounded-br-[3rem] text-center'>
               Nur
             </span>
             Store
