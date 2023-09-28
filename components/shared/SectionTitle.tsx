@@ -5,9 +5,6 @@ interface SectionTitleProps  {
   description?:string
 }
 
-
-
-
 const SectionTitle: React.FC<SectionTitleProps>  = ({subtitle,title,description}) => {
   return (
     <div>

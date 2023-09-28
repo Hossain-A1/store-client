@@ -4,7 +4,11 @@ import SectionTitle from "../shared/SectionTitle";
 const Contact = () => {
   return (
     <div className='wrapper section-p'>
-      <SectionTitle subtitle='nur store' title='get in tuch' />
+      <SectionTitle
+        subtitle='nur store'
+        title='get in tuch'
+        description='Contact Us Today and Let Us Know How We Can Serve You Better??'
+      />
       <div className='max-lg:flex-col flex justify-between items-start'>
         <div className='nur-store-details flex flex-col gap-5 items-start py-10'>
           <span className='font-medium'>
@@ -14,7 +18,6 @@ const Contact = () => {
             </a>
           </span>
           <span className='font-medium'>
-            Phone:{" "}
             <a href='#' className='font-normal underline'>
               +92383830
             </a>
@@ -59,6 +62,9 @@ const Contact = () => {
       </div>
 
       <form className='flex flex-col items-center gap-5 bg-orange/5 rounded-full shadow-xl py-5'>
+        <h2>
+          How Can We Assist You? Fill Out the Form Below or Email Us Directly
+        </h2>
         <input
           type='text'
           placeholder='name'
