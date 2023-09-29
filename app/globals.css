@@ -2,11 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /* base style */
 
-body{
- @apply bg-light;
+body {
+  @apply bg-light_dark;
 }
 html {
   --scrool-behavior: smooth !important;
@@ -25,17 +24,15 @@ html {
   transition: 500ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-
-
 .nav-lists {
   @apply flex justify-between items-center gap-5;
 }
 .nav-lists {
-  @apply max-lg:w-full max-lg:h-full max-lg:absolute max-lg:top-0 max-lg:left-0 max-lg:bg-slate-200 max-lg:flex max-lg:justify-center max-lg:items-center max-lg:flex-col max-lg:opacity-0 max-lg:invisible max-lg:translate-x-0 origin-top h-full;
+  @apply   max-lg:w-full max-lg:h-full max-lg:absolute max-lg:top-0 max-lg:bottom-0 max-lg:right-0 max-lg:left-0 max-lg:bg-slate-300 max-lg:flex max-lg:justify-center max-lg:items-center max-lg:flex-col max-lg:opacity-0 max-lg:invisible max-lg:translate-x-0 origin-top h-full;
 }
 
 .active .nav-lists {
-  @apply max-lg:visible max-lg:opacity-100 max-lg:translate-x-0 max-lg:z-[9999]   h-full;
+  @apply max-lg:fixed  max-lg:visible max-lg:opacity-100 max-lg:translate-x-0 max-lg:z-[9999]   h-full;
 }
 
 .mobile-navber-btn {
@@ -43,7 +40,7 @@ html {
 }
 
 .mobile-navber-icon[name="close-outline"] {
-  @apply hidden max-lg:text-4xl max-lg:text-black;
+  @apply hidden max-lg:text-4xl max-lg:text-black ;
 }
 
 .active .mobile-navber-icon {
@@ -53,9 +50,9 @@ html {
   @apply hidden;
 }
 .active .close-outline {
-  @apply max-lg:inline-block;
+  @apply max-lg:inline-block fixed;
 }
 
-.active-color{
-  @apply opacity-100
+.active-color {
+  @apply opacity-100;
 }
