@@ -10,13 +10,8 @@ const Navber = () => {
   return (
     <header className=' h-20  flex flex-col justify-center items-center bg-slate-300'>
       <nav className='wrapper    flex items-center justify-between   '>
-        <div className=''>
-          <h2 className='flex gap-1 text-xl '>
-            <span className='bg-orange px-3 text-black rounded-br-[3rem] text-center'>
-              Nur
-            </span>
-            Store
-          </h2>
+        <div className='h-12 w-12'>
+         <img src="https://th.bing.com/th/id/OIG.8L.pswyQkpGUAsT1Os6N?pid=ImgGn" alt="" className="h-full w-full" />
         </div>
 
         <div className={icon ? "navber active" : "navber"}>
