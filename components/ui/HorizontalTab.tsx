@@ -16,7 +16,7 @@ const HorizontalTab: React.FC<HorizontalTabProps> = ({ tabs,children,onClick }) 
     onclick && onclick;
   },[onClick]);
   return (
-    <div>
+    <div className="wrapper">
       <div className='flex items-center justify-center'>
         {tabs?.map((tab: string, index: number) => (
           <button

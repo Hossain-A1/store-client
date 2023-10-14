@@ -1,13 +1,13 @@
-"use client"
-import React, { useState } from 'react'
+"use client";
+import React, { useState } from "react";
 import { cn } from "@/lib/utils";
-import SectionTitle from '@/components/shared/SectionTitle';
-import Link from 'next/link';
+import SectionTitle from "@/components/shared/SectionTitle";
+import Link from "next/link";
+import { buttonVariance } from "@/components/ui/Button";
 
 const SignupPage = () => {
   const [modal2, setModal2] = useState(false);
   return (
- 
     <div className='wrapper section-p  flex flex-col items-center  justify-center gap-5 h-screen relative  '>
       <div className='absolute top-5 space-y-3'>
         <SectionTitle subtitle='go ahed' title='signup' />
@@ -23,7 +23,7 @@ const SignupPage = () => {
           </label>
           <input
             type='text'
-            placeholder='e-g, user@shop.net'
+            placeholder='e-g, Pekka'
             className='py-2 max-lg:py-1 px-4 rounded-lg outline-none border-2 border-light focus:border-orange eq text-sm'
           />
           <label htmlFor='name' className='max-lg:text-sm'>
@@ -45,14 +45,14 @@ const SignupPage = () => {
 
           <button
             type='submit'
-            className='bg-orange/80 eq hover:bg-orange rounded-lg max-lg:py-1 py-2 mt-2'
+         className={cn( buttonVariance({ variant: 'ocen'}))}
           >
-            Login
+            Signup
           </button>
         </div>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default SignupPage 
+export default SignupPage;

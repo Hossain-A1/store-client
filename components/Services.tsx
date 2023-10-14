@@ -5,7 +5,7 @@ import { RiSecurePaymentLine } from "react-icons/ri";
 const Benefits = () => {
   return (
     <section className='wrapper section-p'>
-      <div className='grid grid-cols-3 max-lg:grid-cols-1 max-lg:gap-5  items-center'>
+      <div className='grid grid-cols-3 max-md:grid-cols-1 max-lg:gap-5  items-center'>
         <div className='w-[15rem] h-[15rem] bg-orange/10 flex flex-col justify-center ml-10 max-lg:ml-0 gap-3 items-center shadow-md rounded-xl'>
           <div className='bg-light/90 w-14 h-14 rounded-full flex items-center justify-center'>
             <TbTruckDelivery className='lg:text-4xl text-2xl text-orange  ' />

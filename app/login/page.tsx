@@ -1,6 +1,7 @@
 "use client";
 
 import SectionTitle from "@/components/shared/SectionTitle";
+import { buttonVariance } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { useState } from "react";
@@ -36,9 +37,9 @@ const LoginPage = () => {
             className='py-2 px-4 rounded-lg outline-none border-2 border-light focus:border-orange eq text-sm max-lg:py-1'
           />
 
-          <button
+<button
             type='submit'
-            className='bg-orange/80 eq hover:bg-orange rounded-lg max-lg:py-1 py-2 mt-2'
+         className={cn( buttonVariance({ variant: 'ocen'}))}
           >
             Login
           </button>
