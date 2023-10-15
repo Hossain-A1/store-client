@@ -7,18 +7,18 @@ export const buttonVariance = cva(
   {
     variants: {
       variant: {
-        dark: 'border-dark bg-dark text-white hover:border-dark-700/90 hover:bg-dark-700/90 ',
+        dark: 'border-dark bg-dark text-white hover:border-dark-700/90 hover:bg-dark-700/80 ',
         outline:
           'border-dark bg-transparent text-dark hover:bg-dark hover:text-white',
         ghost:
           'border-transparent bg-transprarnt  text-dark hover:border-gray hover:bg-gray',
-        rose: 'border-red bg-red text-white hover:bg-red/90 hover:border-red/90',
-        love: 'border-pink bg-pink text-dark hover:border-pink/90 hover:bg-pink/90',
+        rose: 'border-red bg-red text-white hover:bg-red/90 hover:border-red/80',
+        love: 'border-pink bg-pink text-dark hover:border-pink/90 hover:bg-pink/80',
         halloween:
-          'border-orange bg-orange text-dark hover:border-orange/90 hover:bg-orange/90',
+          'border-orange bg-orange text-dark hover:border-orange/90 hover:bg-orange/80',
         success:
-          'border-green bg-green text-dark hover:border-green/90 hover:bg-green/90',
-        ocen: 'border-blue bg-blue text-dark hover:border-blue/90 hover:bg-blue/90',
+          'border-green bg-green text-dark hover:border-green/90 hover:bg-green/80',
+        ocen: 'border-blue bg-blue text-dark hover:border-blue/90 hover:bg-blue/80',
         violet:
           'border-violet bg-violet text-white hover:border-violet/90 hover:bg-violet/90',
       },

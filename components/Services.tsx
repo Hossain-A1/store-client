@@ -10,7 +10,7 @@ const Benefits = () => {
           <div className='bg-light/90 w-14 h-14 rounded-full flex items-center justify-center'>
             <TbTruckDelivery className='lg:text-4xl text-2xl text-orange  ' />
           </div>
-          <h3 className='capitalize text-slate-900 font-normal'>
+          <h3 className='capitalize text-sm text-slate-900 font-normal'>
             Super fast and free Delivery
           </h3>
         </div>
@@ -20,7 +20,7 @@ const Benefits = () => {
               <MdSecurity className='lg:text-4xl text-2xl text-violet-700 text-orange  ' />
             </div>
 
-            <h3 className='capitalize text-slate-900 font-normal'>
+            <h3 className='capitalize text-sm text-slate-900 font-normal'>
               Non-contact Shipping{" "}
             </h3>
           </div>
@@ -28,7 +28,7 @@ const Benefits = () => {
             <div className='bg-light/90 w-14 h-14 rounded-full flex items-center justify-center'>
               <GiReceiveMoney className='lg:text-4xl text-2xl text-violet-700 text-orange ' />
             </div>
-            <h3 className='capitalize text-slate-900 font-normal'>
+            <h3 className='capitalize text-sm text-slate-900 font-normal'>
               Mony-back Guaranteed
             </h3>
           </div>
@@ -38,7 +38,7 @@ const Benefits = () => {
             <RiSecurePaymentLine className='lg:text-4xl text-2xl text-violet-700 text-orange ' />
           </div>
 
-          <h3 className='capitalize text-slate-900 font-normal'>
+          <h3 className='capitalize text-sm text-slate-900 font-normal'>
             Super secure payment system
           </h3>
         </div>

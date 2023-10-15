@@ -5,30 +5,29 @@ interface ProductItemProps {
 }
 const ProductImages: React.FC<ProductItemProps> = ({ productItem }) => {
   const [images, setImages] = useState(productItem?.images[0]);
+  
   return (
     <div className='  grid grid-cols-3 gap-5 section-p'>
-      <div className='flex flex-col  items-start'>
-        {productItem?.images.map((img, i) => {
+      <div className='flex flex-col  items-start gap-5  '>
+        {productItem?.images.map((image, i) => {
           return (
-            <figure key={i} className='w-[6rem] h-[6rem]'>
+            <figure key={i} className='w-[4rem] h-[4rem] '>
               <img
-                src={img}
-                alt=''
-                onClick={() => setImages(img)}
-                className='cursor-pointer object-cover'
+                src={image}
+                alt={productItem.title}
+                onClick={() => setImages(image)}
+                className='cursor-pointer object-cover w-full h-full  '
               />
             </figure>
           );
         })}
       </div>
 
-      <div className='flex justify-center items-center col-span-2 overflow-hidden'>
-        <img
-          src={images}
-          alt={productItem?.category}
-          className='object-cover'
-        />
-      </div>
+      {images  &&  (
+        <div className='flex justify-center items-center col-span-2 overflow-hidden w-[18rem] h-[18rem] shadow-xl bg-red'>
+          <img src={images} alt={productItem?.title} className='object-cover w-full h-full' />
+        </div>
+      )}
     </div>
   );
 };

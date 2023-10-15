@@ -16,7 +16,7 @@ const HeroSection = () => {
         <div className='relative mt-10 '>
           <div className=' absolute h-[20rem] max-md:h-[15rem] w-full -left-10 max-md:left-0 z-[1]'>
             <Image
-              src='https://images.pexels.com/photos/2536965/pexels-photo-2536965.jpeg?auto=compress&cs=tinysrgb&w=600'
+              src='https://t4.ftcdn.net/jpg/01/20/72/59/240_F_120725937_rmrpLfMpH1rRfNFT2kUg8w3oDjDsx6Ge.jpg'
               height={1280}
               width={640}
               alt='hero image'
