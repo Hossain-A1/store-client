@@ -19,7 +19,7 @@ const Feature = () => {
 
       {products && products?.length > 0 && (
         <HorizontalTab tabs={["Electonic", "Clothes", "variety"]}>
-          <div className='grid grid-cols-1 gap-10 md:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4'>
+          <div className='grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4'>
             {products
               .filter(
                 (item: productDataType) => item.category === "Electronics"
@@ -32,7 +32,7 @@ const Feature = () => {
                 <FeatureItem key={item._id} productData={item} />
               ))}
           </div>
-          <div className='grid grid-cols-1 gap-10 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4'>
+          <div className='grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4'>
             {products
               .filter((item: productDataType) => item.category === "Clothes")
               .sort(
@@ -44,7 +44,7 @@ const Feature = () => {
               ))}
            
           </div>
-          <div className='grid grid-cols-1 gap-10 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4'>
+          <div className='grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4'>
             {products
               .filter((item: productDataType) => item.category === "Varietes")
               .sort(

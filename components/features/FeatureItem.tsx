@@ -11,7 +11,7 @@ interface FeatureItemProps {
 
 const FeatureItem: React.FC<FeatureItemProps> = ({ productData }) => {
   return (
-    <div className='wrapper section-p'>
+    <div className=''>
       <div className='shadow-lg flex flex-col items-center gap-5 py-5 rounded-lg'>
         <h2 className='h-[2rem] text-center'>{productData.title}</h2>
 

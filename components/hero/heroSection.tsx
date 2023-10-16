@@ -10,6 +10,7 @@ const HeroSection = () => {
             subtitle='welcome to'
             title='nur store'
             description='Nur Store is an ecommerce website that sells a variety of products, such as clothing, accessories, home decor, electronics, and more. Nur Store aims to provide high-quality products at affordable prices, and to deliver a satisfying shopping experience for its customers.'
+            btn="Visit our store"
           />
         </div>
 
