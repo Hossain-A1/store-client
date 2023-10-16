@@ -42,7 +42,6 @@ const Feature = () => {
               .map((item: productDataType) => (
                 <FeatureItem key={item._id} productData={item} />
               ))}
-           
           </div>
           <div className='grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4'>
             {products
@@ -54,7 +53,6 @@ const Feature = () => {
               .map((item: productDataType) => (
                 <FeatureItem key={item._id} productData={item} />
               ))}
-           
           </div>
         </HorizontalTab>
       )}
