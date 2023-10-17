@@ -5,7 +5,7 @@ interface ProductItemProps {
 }
 const ProductImages: React.FC<ProductItemProps> = ({ productItem }) => {
   const [images, setImages] = useState(productItem?.images[0]);
-  
+
   return (
     <div className='  grid grid-cols-3 gap-5 section-p'>
       <div className='flex flex-col  items-start gap-5  '>
@@ -23,9 +23,13 @@ const ProductImages: React.FC<ProductItemProps> = ({ productItem }) => {
         })}
       </div>
 
-      {images  &&  (
+      {images && (
         <div className='flex justify-center items-center col-span-2 overflow-hidden w-[18rem] h-[18rem] shadow-xl bg-red'>
-          <img src={images} alt={productItem?.title} className='object-cover w-full h-full' />
+          <img
+            src={images}
+            alt={productItem?.title}
+            className='object-cover w-full h-full'
+          />
         </div>
       )}
     </div>

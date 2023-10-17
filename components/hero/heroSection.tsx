@@ -1,17 +1,22 @@
 import Image from "next/image";
 import SectionTitle from "../shared/SectionTitle";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
+import { buttonVariance } from "../ui/Button";
 
 const HeroSection = () => {
   return (
     <section className='wrapper section-p h-[calc(100vh-5rem)] '>
       <div className='grid max-lg:grid-cols-1 grid-cols-2 gap-10 '>
-        <div className=''>
+        <div className='space-y-5'>
           <SectionTitle
             subtitle='welcome to'
             title='nur store'
             description='Nur Store is an ecommerce website that sells a variety of products, such as clothing, accessories, home decor, electronics, and more. Nur Store aims to provide high-quality products at affordable prices, and to deliver a satisfying shopping experience for its customers.'
-            btn="Visit our store"
+         
           />
+
+          <Link href='/products' className={cn(buttonVariance({variant:'halloween'}))}>Visit our store</Link>
         </div>
 
         <div className='relative mt-10 '>

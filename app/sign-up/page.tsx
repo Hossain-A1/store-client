@@ -11,7 +11,7 @@ const SignupPage = () => {
     <div className='wrapper section-p  flex flex-col items-center  justify-center gap-5 h-screen relative  '>
       <div className='absolute top-5 space-y-3'>
         <SectionTitle subtitle='go ahed' title='signup' />
-        <button onClick={() => setModal2(!modal2)}>Signup/</button>
+        <button className="text-blue/90" onClick={() => setModal2(!modal2)}>Signup/</button>
         <Link href='/login'>Login</Link>
       </div>
 

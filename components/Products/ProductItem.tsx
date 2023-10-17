@@ -24,6 +24,7 @@ const ProductItem: React.FC<ProductItemProps> = ({ productData }) => {
               width={640}
               src={productData.images[0]}
               alt={productData.category}
+              priority
               className='w-full h-full object-cover'
             />
           </Link>

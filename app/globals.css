@@ -5,7 +5,7 @@
 /* base style */
 
 body {
-  @apply bg-light;
+  @apply bg-light_dark;
 }
 html {
   --scrool-behavior: smooth !important;

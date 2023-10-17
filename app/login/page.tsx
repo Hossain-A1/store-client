@@ -13,7 +13,7 @@ const LoginPage = () => {
     <div className='wrapper section-p  flex flex-col items-center  justify-center gap-5 h-screen relative  '>
       <div className='absolute top-5 space-y-3'>
         <SectionTitle subtitle='go ahed' title='signup' />
-        <button onClick={() => setModal(!modal)}>Login/</button>
+        <button className="text-blue/90" onClick={() => setModal(!modal)}>Login<span className="text-dark">/</span></button>
         <Link href='/sign-up'>Signup</Link>
       </div>
 

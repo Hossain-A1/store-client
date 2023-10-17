@@ -12,7 +12,7 @@ const Products = () => {
       {isLoading && <Loading isLoading={isLoading} />}
       {error && <Error error={error.message} />}
       {products && products?.length > 0 && (
-        <div className="space-y-10">
+        <div className='space-y-10'>
           <div className='grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4'>
             {products
               .filter(
@@ -40,7 +40,7 @@ const Products = () => {
           </div>
           <div className='grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4'>
             {products
-              .filter((item: productDataType) => item.category === "Varietes")
+              .filter((item: productDataType) => item.category === "Variety")
               .sort(
                 (a: productDataType, b: productDataType) => a.price - b.price
               )
