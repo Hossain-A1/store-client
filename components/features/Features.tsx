@@ -18,7 +18,7 @@ const Feature = () => {
       {error && <Error error={error.message} />}
 
       {products && products?.length > 0 && (
-        <HorizontalTab tabs={["Electonic", "Clothes", "variety"]}>
+        <HorizontalTab tabs={["Electonic", "Clothes", "variety"]}  >
           <div className='grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4'>
             {products
               .filter(

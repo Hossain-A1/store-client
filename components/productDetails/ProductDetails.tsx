@@ -55,7 +55,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
 
               <div className='product-warranty flex justify-between gap-5 items-center'>
                 <div className='product-facility flex  flex-col  items-center gap-2 '>
-                  <div className='bg-light_dark p-1 rounded-full'>
+                  <div className='bg-light p-1 rounded-full'>
                     <TbReportMoney className='text-3xl text-orange/70 ' />
                   </div>
                   <p className='text-xs font-medium capitalize text-blue/90 text-center'>
@@ -63,7 +63,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
                   </p>
                 </div>
                 <div className='product-facility flex flex-col   items-center gap-2'>
-                  <div className='bg-light_dark p-1 rounded-full'>
+                  <div className='bg-light p-1 rounded-full'>
                     <TbBox className='text-3xl text-orange/70 ' />
                   </div>
 
@@ -72,7 +72,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
                   </p>
                 </div>
                 <div className='product-facility flex flex-col   items-center gap-2'>
-                  <div className='bg-light_dark p-1 rounded-full'>
+                  <div className='bg-light p-1 rounded-full'>
                     <TbTruckDelivery className='text-3xl text-orange/70 ' />
                   </div>
 
@@ -81,7 +81,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
                   </p>
                 </div>
                 <div className='product-facility flex flex-col   items-center gap-2'>
-                  <div className='bg-light_dark p-1 rounded-full'>
+                  <div className='bg-light p-1 rounded-full'>
                     <TbLockDollar className='text-3xl text-orange/70 ' />
                   </div>
 

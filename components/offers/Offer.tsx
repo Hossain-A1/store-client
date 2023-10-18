@@ -7,10 +7,10 @@ import Link from "next/link";
 const Offer = () => {
   const { data } = useFetch("/api/products");
   return (
-    <div className='grid grid-cols-4 items-center gap-5'>
+    <div className='grid grid-cols-2 lg:grid-cols-4 items-center gap-5 section-m'>
       <Link
         href='/products'
-        className='bg-light h-[24rem] flex flex-col gap-5 items-center'
+        className='bg-light lg:h-[24rem] h-[16rem] flex flex-col gap-5 items-center brightness-90 hover:brightness-100 eq shadow-sm'
       >
         <h2 className='text-2xl font-semibold capitalize text-center'>
           Electronics | Up to 20% off
@@ -45,7 +45,7 @@ const Offer = () => {
 
       <Link
         href='/products'
-        className='bg-blue/10 h-[24rem] flex flex-col gap-5 items-center'
+        className='bg-blue/10 h-[24rem] flex flex-col gap-5 items-center brightness-90 hover:brightness-100 eq shadow-sm'
       >
         <h2 className='text-2xl font-semibold capitalize text-center'>
           Varieties items | Up to 50% off
@@ -56,7 +56,7 @@ const Offer = () => {
               .filter((item: productDataType) => item?.category === "Variety")
               ?.slice(1, 5)
               ?.map((item: productDataType) => (
-                <div className='w-[6rem] h-[6rem] p-2 space-y-2 bg-dark/30'>
+                <div className='w-[6rem] h-[6rem] p-2 space-y-2 bg-dark/30 '>
                   <Image
                     src={item.images[1]}
                     alt=''
@@ -78,7 +78,7 @@ const Offer = () => {
       </Link>
       <Link
         href='/products'
-        className='bg-orange/10 h-[24rem] flex flex-col gap-5 items-center'
+        className='bg-orange/10 h-[24rem] flex flex-col gap-5 items-center brightness-90 hover:brightness-100 eq shadow-sm'
       >
         <h2 className='text-2xl font-semibold capitalize text-center'>
           Men && women outlet | up to 60% off
@@ -110,7 +110,7 @@ const Offer = () => {
       </Link>
       <Link
         href='/products'
-        className='bg-pink/10 h-[24rem] flex flex-col gap-5 items-center'
+        className='bg-pink/10 h-[24rem] flex flex-col gap-5 items-center brightness-90 hover:brightness-100 eq shadow-sm'
       >
         <h2 className='text-2xl font-semibold capitalize text-center'>
           New arrivals in (9/2023) Electronics

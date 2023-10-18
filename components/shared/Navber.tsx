@@ -3,12 +3,14 @@ import Link from "next/link";
 import { FiShoppingCart } from "react-icons/fi";
 import { CgClose, CgMenu } from "react-icons/cg";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 const Navber = () => {
   const [icon, setIcon] = useState(true);
+  const pathName = usePathname()
 
   return (
-    <header className=' h-20  flex flex-col justify-center items-center bg-slate-300'>
+    <header className=' h-20  flex flex-col justify-center items-center bg-dark text-light'>
       <nav className='wrapper    flex items-center justify-between   '>
         <div className='h-12 w-12'>
          <img src="https://th.bing.com/th/id/OIG.8L.pswyQkpGUAsT1Os6N?pid=ImgGn" alt="" className="h-full w-full" />
@@ -20,7 +22,7 @@ const Navber = () => {
               <Link
                 href='/'
                 onClick={() => setIcon(false)}
-                className='max-md:text-xl'
+                className={`${pathName === '/' ?'nav-active ':''}`}
               >
                 Home
               </Link>
@@ -29,7 +31,7 @@ const Navber = () => {
               <Link
                 href='/about'
                 onClick={() => setIcon(false)}
-                className='max-md:text-xl'
+                className={`${pathName === '/about' ?'nav-active ':''}`}
               >
                 About
               </Link>
@@ -38,7 +40,7 @@ const Navber = () => {
               <Link
                 href='/products'
                 onClick={() => setIcon(false)}
-                className='max-md:text-xl'
+                className={`${pathName === '/products' ?'nav-active ':''}`}
               >
                 Products
               </Link>
@@ -47,7 +49,7 @@ const Navber = () => {
               <Link
                 href='/contact'
                 onClick={() => setIcon(false)}
-                className='max-md:text-xl'
+                className={`${pathName === '/contact' ?'nav-active ':''}`}
               >
                 Contact
               </Link>
@@ -56,7 +58,7 @@ const Navber = () => {
               <Link
                 href='/login'
                 onClick={() => setIcon(false)}
-                className='max-md:text-xl'
+                className={`${pathName === '/login' ?'nav-active ':''}`}
               >
                 login
               </Link>
@@ -65,7 +67,7 @@ const Navber = () => {
               <Link
                 href='/cart'
                 onClick={() => setIcon(false)}
-                className='max-md:text-xl'
+               className=""
               >
                 <FiShoppingCart className='text-xl max-md:text-2xl' />
                 <span className='absolute -top-2 left-4 bg-orange rounded-full text-xs '>
