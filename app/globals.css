@@ -18,7 +18,7 @@ html {
   @apply container mx-auto px-5 md:px-0;
 }
 .section-p {
-  @apply py-20;
+  @apply py-10;
 }
 .section-m{
   @apply mx-5
@@ -61,4 +61,21 @@ html {
 
 .active-color {
   @apply opacity-100;
+}
+
+
+/* SWIPER STYLES */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #1fb2a6 !important;
+  fill: #1fb2a6 !important;
+  stroke: #1fb2a6 !important;
+}
+
+.swiper-pagination-bullet {
+  background-color: #1fb2a6 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #1fb2a6 !important;
 }
