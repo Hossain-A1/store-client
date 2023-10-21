@@ -15,17 +15,17 @@ const Offer = () => {
           subtitle='packages'
         />
       </div>
-      <div className='grid grid-cols-2 lg:grid-cols-4 items-center gap-5 section-m'>
+      <div className='grid grid-cols-2 lg:grid-cols-4  items-center lg:gap-5 md:gap-5 gap-2 section-m'>
         <Link
           href='/products'
-          className='bg-light lg:h-[24rem] h-[16rem] flex flex-col gap-5 items-center  hover:brightness-90 eq shadow-sm'
+          className='bg-light lg:h-[24rem] md:h-[24rem] h-[18rem]  flex flex-col gap-5 items-center hover:brightness-90 eq shadow-sm'
         >
-          <h2 className='text-2xl font-semibold capitalize text-center'>
+          <h2 className='lg:text-2xl text-lg font-semibold capitalize text-center lg:h-[6rem] h-[5rem]'>
             Electronics | Up to 20% off
           </h2>
           {isLoading && <p className='text-dark'>Loading...</p>}
 
-          <div className='pictures  flex flex-wrap gap-10 justify-center items-center'>
+          <div className='pictures  flex flex-wrap lg:gap-5 md:gap-5 gap-3  justify-center items-center'>
             {data &&
               data
                 .filter(
@@ -33,7 +33,7 @@ const Offer = () => {
                 )
                 ?.slice(2, 6)
                 ?.map((item: productDataType) => (
-                  <div className='w-[6rem] h-[6rem] p-2 space-y-2 bg-dark/30'>
+                  <div className='lg:w-[6rem] lg:h-[6rem] md:h-[8rem] md:w-[8rem] h-[3.7rem] w-[3.7rem] p-2 space-y-2 bg-dark/30'>
                     <Image
                       src={item.images[3]}
                       alt=''
@@ -42,14 +42,14 @@ const Offer = () => {
                       priority
                       className='h-full w-full object-cover'
                     />
-                    <span className='text-xs text-dark -ml-2 font-medium'>
+                    <span className='lg:text-xs text-[0.60rem] text-dark -ml-2 font-medium'>
                       {item.title.substring(0, 11)}
                     </span>
                   </div>
                 ))}
           </div>
           {!isLoading && (
-            <span className='text-blue hover:underline eq text-xs font-medium mt-2'>
+            <span className='text-blue hover:underline eq text-xs font-medium md:mt-2 mt-5'>
               See more
             </span>
           )}
@@ -57,20 +57,20 @@ const Offer = () => {
 
         <Link
           href='/products'
-          className='bg-light h-[24rem] flex flex-col gap-5 items-center hover:brightness-90 eq shadow-sm'
+          className='bg-light lg:h-[24rem] md:h-[24rem] h-[18rem]  flex flex-col gap-5 items-center hover:brightness-90 eq shadow-sm'
         >
-          <h2 className='text-2xl font-semibold capitalize text-center'>
+          <h2 className='lg:text-2xl text-lg font-semibold capitalize text-center lg:h-[6rem] h-[5rem]'>
             Varieties items | Up to 50% off
           </h2>
           {isLoading && <p className='text-dark'>Loading...</p>}
 
-          <div className='pictures  flex flex-wrap gap-10 justify-center items-center'>
+          <div className='pictures  flex flex-wrap lg:gap-5 md:gap-5 gap-3  justify-center items-center'>
             {data &&
               data
                 .filter((item: productDataType) => item?.category === "Variety")
                 ?.slice(1, 5)
                 ?.map((item: productDataType) => (
-                  <div className='w-[6rem] h-[6rem] p-2 space-y-2 bg-dark/30 '>
+                  <div className='lg:w-[6rem] lg:h-[6rem] md:h-[8rem] md:w-[8rem] h-[3.7rem] w-[3.7rem] p-2 space-y-2 bg-dark/30 '>
                     <Image
                       src={item.images[1]}
                       alt=''
@@ -87,27 +87,27 @@ const Offer = () => {
                 ))}
           </div>
           {!isLoading && (
-            <span className='text-blue hover:underline eq text-xs font-medium mt-2'>
+            <span className='text-blue hover:underline eq text-xs font-medium md:mt-2 mt-5'>
               See more
             </span>
           )}
         </Link>
         <Link
           href='/products'
-          className='bg-light h-[24rem] flex flex-col gap-5 items-center  hover:brightness-90 eq shadow-sm'
+          className='bg-light lg:h-[24rem] md:h-[24rem] h-[18rem]  flex flex-col gap-5 items-center hover:brightness-90 eq shadow-sm'
         >
-          <h2 className='text-2xl font-semibold capitalize text-center'>
+          <h2 className='lg:text-2xl text-lg font-semibold capitalize text-center lg:h-[6rem] h-[5rem]'>
             Men && women outlet | up to 60% off
           </h2>
           {isLoading && <p className='text-dark'>Loading...</p>}
 
-          <div className='pictures  flex flex-wrap gap-10 justify-center items-center'>
+          <div className='pictures  flex flex-wrap lg:gap-5 md:gap-5 gap-3  justify-center items-center'>
             {data &&
               data
                 .filter((item: productDataType) => item.category === "Clothes")
                 ?.slice(0, 4)
                 ?.map((item: productDataType) => (
-                  <div className='w-[6rem] h-[6rem] p-2 space-y-2 bg-dark/30'>
+                  <div className='lg:w-[6rem] lg:h-[6rem] md:h-[8rem] md:w-[8rem] h-[3.7rem] w-[3.7rem] p-2 space-y-2 bg-dark/30'>
                     <Image
                       src={item.images[1]}
                       alt=''
@@ -116,28 +116,28 @@ const Offer = () => {
                       priority
                       className='h-full w-full object-cover'
                     />
-                    <span className='text-xs text-dark -ml-2 font-medium'>
+                    <span className='lg:text-xs text-[0.60rem] text-dark -ml-2 font-medium'>
                       {item.title.substring(0, 11)}
                     </span>
                   </div>
                 ))}
           </div>
           {!isLoading && (
-            <span className='text-blue hover:underline eq text-xs font-medium mt-2'>
+            <span className='text-blue hover:underline eq text-xs font-medium md:mt-2 mt-5'>
               See more
             </span>
           )}
         </Link>
         <Link
           href='/products'
-          className='bg-light h-[24rem] flex flex-col gap-5 items-center hover:brightness-90 eq shadow-sm'
+          className='bg-light lg:h-[24rem] md:h-[24rem] h-[18rem]  flex flex-col gap-5 items-center hover:brightness-90 eq shadow-sm'
         >
-          <h2 className='text-2xl font-semibold capitalize text-center'>
+          <h2 className='lg:text-2xl text-lg font-semibold capitalize text-center lg:h-[6rem] h-[5rem]'>
             New arrivals in (9/2023) Electronics
           </h2>
           {isLoading && <p className='text-dark'>Loading...</p>}
 
-          <div className='pictures  flex flex-wrap gap-10 justify-center items-center'>
+          <div className='pictures  flex flex-wrap lg:gap-5 md:gap-5 gap-3 justify-center items-center'>
             {data &&
               data
                 .filter(
@@ -145,7 +145,7 @@ const Offer = () => {
                 )
                 ?.slice(0, 4)
                 ?.map((item: productDataType) => (
-                  <div className='w-[6rem] h-[6rem] p-2 space-y-2 bg-dark/30'>
+                  <div className='lg:w-[6rem] lg:h-[6rem] md:h-[8rem] md:w-[8rem] h-[3.7rem] w-[3.7rem] p-2 space-y-2 bg-dark/30'>
                     <Image
                       src={item.images[1]}
                       alt=''
@@ -154,14 +154,14 @@ const Offer = () => {
                       priority
                       className='h-full w-full object-cover'
                     />
-                    <span className='text-xs text-dark -ml-2 font-medium'>
+                    <span className='lg:text-xs text-[0.60rem] text-dark -ml-2 font-medium'>
                       {item.title.substring(0, 13)}
                     </span>
                   </div>
                 ))}
           </div>
           {!isLoading && (
-            <span className='text-blue hover:underline eq text-xs font-medium mt-2'>
+            <span className='text-blue hover:underline eq text-xs font-medium lg:mt-2 md:mt-2 mt-5'>
               See more
             </span>
           )}
