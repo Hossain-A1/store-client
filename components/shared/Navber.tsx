@@ -11,8 +11,8 @@ const Navber = () => {
 
   return (
     <header className=' h-20    flex flex-col justify-center items-center bg-dark text-light'>
-      <nav className='wrapper   flex items-center justify-between   '>
-      <h2>Nur store</h2>
+      <nav className=' wrapper mx-10  flex items-center justify-between   '>
+        <h2>Nur store</h2>
 
         <div className={icon ? "navber active" : "navber"}>
           <ul className=' nav-lists'>
@@ -63,8 +63,8 @@ const Navber = () => {
             </li>
             <li className='relative '>
               <Link href='/cart' onClick={() => setIcon(false)} className=''>
-                <FiShoppingCart className='text-xl max-md:text-2xl' />
-                <span className='absolute -top-2 left-4 bg-orange rounded-full text-xs '>
+                <FiShoppingCart className='text-2xl max-md:text-2xl' />
+                <span className='absolute -top-2 left-4 bg-orange rounded-full text-xs text-dark font-semibold p-[0.100rem] '>
                   10
                 </span>
               </Link>
