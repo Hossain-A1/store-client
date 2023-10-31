@@ -1,4 +1,8 @@
 "use client";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Navigation, Autoplay } from "swiper/modules";
 
 import Link from "next/link";
 
@@ -13,75 +17,166 @@ import { BsArrowReturnLeft, BsCashCoin } from "react-icons/bs";
 
 const TarmsSection = () => {
   return (
-    <div className='relative section-m'>
-      <h2 className='absolute top-2 text-2xl font-medium'>
+    <div className=' container relative'>
+      <h2 className=' text-2xl font-medium absolute top-2 z-[3]'>
         Shop on Nur store{" "}
       </h2>
 
-      <div className='flex justify-around gap-5 bg-light py-12 z-[9]  overflow-x-hidden'>
-        <div className='overflow-hidden flex flex-col gap-3  '>
-          <div className=' bg-orange rounded-full h-[12rem] w-[12rem] z-[9] flex justify-center items-center'>
-            <span>
-              <TbTruckDelivery className=' text-light text-8xl' />
-            </span>
-          </div>
+      <Swiper
+        className='  bg-light  overflow-x-hidden'
+        autoplay={{ delay: 100, disableOnInteraction: false }}
+        loop={true}
+        speed={35000}
+        grabCursor={true}
+        navigation={false}
+        modules={[Navigation, Autoplay]}
+      >
+        <div className='flex justify-center items-center gap-10'>
+          <SwiperSlide className='py-12'>
+            <div className='flex justify-between gap-10'>
+              <div className='overflow-hidden flex flex-col items-center  gap-3 relative '>
+                <div className=' bg-orange rounded-full lg:h-[12rem] lg:w-[12rem] h-[10rem] w-[10rem]  z-[1] flex justify-center items-center'>
+                  <span>
+                    <TbTruckDelivery className=' text-light text-8xl' />
+                  </span>
+                </div>
+
+                <Link
+                  href='/'
+                  className='w-full space-x-20 absolute text-center hover:text-blue eq  bg-white  bottom-0 py-5 z-[2]'
+                >
+                  How to get free deliveries
+                </Link>
+              </div>
+              <div className='overflow-hidden flex flex-col gap-3 items-center relative'>
+                <div className=' bg-orange rounded-full lg:h-[12rem] lg:w-[12rem] h-[10rem] w-[10rem]  z-[1] flex justify-center items-center'>
+                  <span className='text-light'>
+                    <BsArrowReturnLeft className=' text-light text-8xl' />
+                  </span>
+                </div>
+                <Link
+                  href='/'
+                  className='w-full space-x-20 absolute hover:text-blue eq  bg-white  bottom-0 py-5 z-[2]'
+                >
+                  How to return an item
+                </Link>
+              </div>
+              <div className='overflow-hidden flex flex-col gap-3 items-center relative '>
+                <div className=' bg-orange rounded-full lg:h-[12rem] lg:w-[12rem] h-[10rem] w-[10rem]  z-[1] flex justify-center items-center'>
+                  <span className='text-light'>
+                    <TbMessages className=' text-light text-8xl' />
+                  </span>
+                </div>
+                <Link
+                  href='/'
+                  className='w-full space-x-20 absolute  bg-white hover:text-blue eq  bottom-0 py-5 z-[2]'
+                >
+                  How to contact us
+                </Link>
+              </div>
+
+              <div className='overflow-hidden flex flex-col gap-3 items-center relative'>
+                <div className=' bg-orange rounded-full lg:h-[12rem] lg:w-[12rem] h-[10rem] w-[10rem]  z-[1] flex justify-center items-center'>
+                  <span className='text-light'>
+                    <TbDeviceMobilePlus className=' text-light text-8xl' />
+                  </span>
+                </div>
+                <Link
+                  href='/'
+                  className='w-full space-x-20 absolute  bg-white  hover:text-blue eq bottom-0 py-5 z-[2]'
+                >
+                  How to place an order
+                </Link>
+              </div>
+              <div className='overflow-hidden flex flex-col gap-3 items-center  relative'>
+                <div className=' bg-orange rounded-full  lg:h-[12rem] lg:w-[12rem] h-[10rem] w-[10rem] z-[1] flex justify-center items-center'>
+                  <span className='text-light'>
+                    <BsCashCoin className=' text-light text-8xl' />
+                  </span>
+                </div>
+                <Link
+                  href='/'
+                  className='w-full space-x-20 absolute  bg-white  hover:text-blue eq bottom-0 py-5 z-[2]'
+                >
+                  How to pay with cash
+                </Link>
+              </div>
+            </div>
+          </SwiperSlide>
+
+          <SwiperSlide className='py-12 '>
+            <div className='flex justify-evenly gap-10'>
+              <div className='overflow-hidden flex flex-col items-center  gap-3 relative '>
+                <div className=' bg-orange rounded-full lg:h-[12rem] lg:w-[12rem] h-[10rem] w-[10rem]  z-[1] flex justify-center items-center'>
+                  <span>
+                    <TbTruckDelivery className=' text-light text-8xl' />
+                  </span>
+                </div>
+
+                <Link
+                  href='/'
+                  className='w-full space-x-20 absolute  text-center bg-white  hover:text-blue eq bottom-0 py-5 z-[2]'
+                >
+                  How to get free deliveries
+                </Link>
+              </div>
+              <div className='overflow-hidden flex flex-col gap-3 items-center relative'>
+                <div className=' bg-orange rounded-full lg:h-[12rem] lg:w-[12rem] h-[10rem] w-[10rem]  z-[1] flex justify-center items-center'>
+                  <span className='text-light'>
+                    <BsArrowReturnLeft className=' text-light text-8xl' />
+                  </span>
+                </div>
+                <Link
+                  href='/'
+                  className='w-full space-x-20 absolute  bg-white hover:text-blue eq  bottom-0 py-5 z-[2]'
+                >
+                  How to return an item
+                </Link>
+              </div>
+              <div className='overflow-hidden flex flex-col gap-3 items-center relative '>
+                <div className=' bg-orange rounded-full lg:h-[12rem] lg:w-[12rem] h-[10rem] w-[10rem] z-[1] flex justify-center items-center'>
+                  <span className='text-light'>
+                    <TbMessages className=' text-light text-8xl' />
+                  </span>
+                </div>
+                <Link
+                  href='/'
+                  className='w-full space-x-20 absolute  bg-white  hover:text-blue eq bottom-0 py-5 z-[2]'
+                >
+                  How to contact us
+                </Link>
+              </div>
+
+              <div className='overflow-hidden flex flex-col gap-3 items-center relative'>
+                <div className=' bg-orange rounded-full lg:h-[12rem] lg:w-[12rem] h-[10rem] w-[10rem] z-[1] flex justify-center items-center'>
+                  <span className='text-light'>
+                    <TbDeviceMobilePlus className=' text-light lg:text-8xl max-lg:4xl' />
+                  </span>
+                </div>
+                <Link
+                  href='/'
+                  className='w-full space-x-20 absolute  bg-white hover:text-blue eq  bottom-0 py-5 z-[2]'
+                >
+                  How to place an order
+                </Link>
+              </div>
+              <div className='overflow-hidden flex flex-col gap-3 items-center  relative'>
+                <div className=' bg-orange rounded-full lg:h-[12rem] lg:w-[12rem] h-[10rem] w-[10rem] z-[1] flex justify-center items-center'>
+                  <span className='text-light'>
+                    <BsCashCoin className=' text-light text-8xl' />
+                  </span>
+                </div>
+                <Link
+                  href='/'
+                  className='w-full space-x-20 absolute  bg-white hover:text-blue eq  bottom-0 py-5  z-[2]'
+                >
+                  How to pay with cash
+                </Link>
+              </div>
+            </div>
+          </SwiperSlide>
         </div>
-        <div className='overflow-hidden flex flex-col gap-3 '>
-          <div className=' bg-orange rounded-full h-[12rem] w-[12rem] z-[9] flex justify-center items-center'>
-            <span className='text-light'>
-              <BsArrowReturnLeft className=' text-light text-8xl' />
-            </span>
-          </div>
-        </div>
-        <div className='overflow-hidden flex flex-col gap-3 '>
-          <div className=' bg-orange rounded-full h-[12rem] w-[12rem] z-[9] flex justify-center items-center'>
-            <span className='text-light'>
-              <TbMessages className=' text-light text-8xl' />
-            </span>
-          </div>
-        </div>
-        <div className='overflow-hidden flex flex-col gap-3 '>
-          <div className=' bg-orange rounded-full h-[12rem] w-[12rem] z-[9] flex justify-center items-center'>
-            <span className='text-light'>
-              <TbDeviceMobilePlus className=' text-light text-8xl' />
-            </span>
-          </div>
-        </div>
-        <div className='overflow-hidden flex flex-col gap-3 '>
-          <div className=' bg-orange rounded-full h-[12rem] w-[12rem] z-[9] flex justify-center items-center'>
-            <span className='text-light'>
-              <BsCashCoin className=' text-light text-8xl' />
-            </span>
-          </div>
-        </div>
-        <div className='overflow-hidden flex flex-col gap-3 '>
-          <div className=' bg-orange rounded-full h-[12rem] w-[12rem] z-[9] flex justify-center items-center'>
-            <span className='text-light'>
-              <TbCreditCard className=' text-light text-8xl' />
-            </span>
-          </div>
-        </div>
-      </div>
-      <div className='absolute z-[10] flex justify-around w-[120%] gap-5 bg-light border-t-2 border-light_dark py-5  top-2/3 text-lg font-medium text-dark/80'>
-        <Link href='/' className='w-[11rem] space-x-20'>
-          How to get free deliveries
-        </Link>
-        <Link href='/' className='w-[11rem] space-x-20'>
-          How to return an item
-        </Link>
-        <Link href='/' className='w-[11rem] space-x-20'>
-          How to contact us
-        </Link>
-        <Link href='/' className='w-[11rem] space-x-20'>
-          How to place an order
-        </Link>
-        <Link href='/' className='w-[11rem] space-x-20'>
-          How to pay with cash
-        </Link>
-        <Link href='/' className='w-[11rem] space-x-20'>
-          Get a Gift Card
-        </Link>
-      </div>
+      </Swiper>
     </div>
   );
 };

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { buttonVariance } from "../ui/Button";
+import { CurrencyFormatter } from "../shared/CurrencyFormatter";
 
 interface FeatureItemProps {
   productData: productDataType;
@@ -12,12 +13,12 @@ interface FeatureItemProps {
 const FeatureItem: React.FC<FeatureItemProps> = ({ productData }) => {
   return (
     <div className='mt-5'>
-      <div className='shadow-sm bg-light flex flex-col items-center gap-5 py-5 rounded-lg'>
+      <div className='shadow-sm bg-light flex flex-col  gap-5 py-5 rounded-lg'>
         <h2 className='h-[2rem] text-center'>{productData.title}</h2>
 
         <Link
           href={`/products/${productData._id}`}
-          className='w=[16rem] h-[16rem]'
+          className='w=[16rem] h-[16rem] inline-block'
         >
           <Image
             height={1280}
@@ -28,12 +29,18 @@ const FeatureItem: React.FC<FeatureItemProps> = ({ productData }) => {
           />
         </Link>
 
-        <Link
-          href={`/products/${productData._id}`}
-          className={cn(buttonVariance({ variant: "outline" }))}
-        >
-          Veiw details
-        </Link>
+        <div className='flex justify-around items-center '>
+          <span>
+            <CurrencyFormatter amount={productData.price} />
+          </span>
+
+          <Link
+            href={`/products/${productData._id}`}
+            className={cn(buttonVariance({ variant: "outline" }))}
+          >
+            Veiw details
+          </Link>
+        </div>
       </div>
     </div>
   );

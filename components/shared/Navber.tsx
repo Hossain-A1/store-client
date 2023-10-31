@@ -11,7 +11,7 @@ const Navber = () => {
 
   return (
     <header className=' h-20    flex flex-col justify-center items-center bg-dark text-light'>
-      <nav className=' wrapper mx-10  flex items-center justify-between   '>
+      <nav className=' container mx-10  flex items-center justify-between   '>
         <h2>Nur store</h2>
 
         <div className={icon ? "navber active" : "navber"}>

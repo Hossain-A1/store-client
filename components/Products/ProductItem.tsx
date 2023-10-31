@@ -14,10 +14,10 @@ const ProductItem: React.FC<ProductItemProps> = ({ productData }) => {
   return (
     <div className='h-[30rem'>
       <div className='shadow-sm flex flex-col items-center gap-3  rounded-lg h-full'>
-        <div className='h-[18rem]'>
+        <div className='h-[18rem] overflow-hidden'>
           <Link
             href={`/products/${productData._id}`}
-            className='w=[18rem] h-[18rem]'
+            className='w=[18rem] h-[18rem] inline-block'
           >
             <Image
               height={1280}
@@ -48,7 +48,7 @@ const ProductItem: React.FC<ProductItemProps> = ({ productData }) => {
           </div>
         </div>
 
-        <div className='h-[4rem] flex flex-col items-cente'>
+        <div className='flex justify-between items-center  '>
           <Link
             href={`/products/${productData._id}`}
             className={cn(buttonVariance({ variant: "outline" }))}

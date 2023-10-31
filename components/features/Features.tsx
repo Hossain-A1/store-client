@@ -11,7 +11,7 @@ const Feature = () => {
   const { error, isLoading, data: products } = useFetch("/api/products");
 
   return (
-    <div className='wrapper section-p '>
+    <div className='container section-p '>
       <SectionTitle subtitle='Our' title='Features' />
 
       {isLoading && <Loading isLoading={isLoading} />}

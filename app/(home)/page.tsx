@@ -1,4 +1,4 @@
-import Benefits from "@/components/Services";
+import Services from "@/components/Services";
 import Explore from "@/components/explore/Explore-more";
 import TarmsSection from "@/components/explore/trams/TarmsSection";
 import Feature from "@/components/features/Features";
@@ -12,7 +12,7 @@ const HomePage = () => {
       <HeroSection />
       <Offer />
       <Feature />
-      <Benefits />
+      <Services/>
       <TarmsSection/>
       <Explore/>
     </>

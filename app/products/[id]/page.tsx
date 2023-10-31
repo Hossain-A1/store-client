@@ -13,7 +13,7 @@ const ProductDetailsPage = ({ params }: { params: { id: string } }) => {
   } = useFetch(`/api/products/${params.id}`);
 
   return (
-    <main className='wrapper'>
+    <main className='container'>
       {isLoading && (
         <div className='flex h-[calc(100vh-5rem)] items-center justify-center'>
           <Loading isLoading={isLoading} />
