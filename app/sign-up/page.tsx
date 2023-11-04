@@ -3,7 +3,7 @@ import React, { useCallback, useState } from "react";
 import { cn } from "@/lib/utils";
 import SectionTitle from "@/components/shared/SectionTitle";
 import Link from "next/link";
-import { buttonVariance } from "@/components/ui/Button";
+import Button, { buttonVariance } from "@/components/ui/Button";
 
 interface SignupPageData {
   name: string;
@@ -76,12 +76,14 @@ console.log(formData);
             className='py-2 px-4 rounded-lg outline-none border-2 border-light focus:border-orange eq text-sm max-lg:py-1'
           />
 
-          <button
+          <Button
             type='submit'
             className={cn(buttonVariance({ variant: "ocen" }))}
           >
+
             Signup
-          </button>
+          </Button>
+       
         </div>
       </form>
     </div>

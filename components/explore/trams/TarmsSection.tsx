@@ -26,7 +26,7 @@ const TarmsSection = () => {
         className='  bg-light  overflow-x-hidden'
         autoplay={{ delay: 100, disableOnInteraction: false }}
         loop={true}
-        speed={35000}
+        speed={55000}
         grabCursor={true}
         navigation={false}
         modules={[Navigation, Autoplay]}

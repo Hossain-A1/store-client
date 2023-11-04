@@ -8,14 +8,14 @@ import SectionTitle from "../shared/SectionTitle";
 const Offer = () => {
   const { data, isLoading } = useFetch("/api/products");
   return (
-    <div>
-      <div className='section-m'>
+    <div className="container section-p">
+      <div className=''>
         <SectionTitle
           title='Grab Our Limited-Time Package Offers Now!'
           subtitle='packages'
         />
       </div>
-      <div className='grid grid-cols-2 lg:grid-cols-4  items-center lg:gap-5 md:gap-5 gap-2 section-m'>
+      <div className='grid grid-cols-2 lg:grid-cols-4  items-center lg:gap-5 md:gap-5 gap-2'>
         <Link
           href='/products'
           className='bg-light lg:h-[24rem] md:h-[24rem] h-[18rem]  flex flex-col gap-5 items-center hover:brightness-90 eq shadow-sm'

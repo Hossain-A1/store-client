@@ -2,9 +2,12 @@ import { TbTruckDelivery } from "react-icons/tb";
 import { MdSecurity } from "react-icons/md";
 import { GiReceiveMoney } from "react-icons/gi";
 import { RiSecurePaymentLine } from "react-icons/ri";
+import SectionTitle from "./shared/SectionTitle";
 const Services = () => {
   return (
-    <section className='container section-p flex flex-col  items-center'>
+    <section className="container section-p">
+      <SectionTitle subtitle="Providing" title="Services"/>
+      <div className=' flex flex-col  items-center'>
       <div className='grid grid-cols-3 max-md:grid-cols-1 gap-5  items-center'>
         <div className='w-[15rem] h-[15rem] bg-dark flex flex-col justify-center ml-10 lg:ml-0 gap-3 items-center shadow-md rounded-xl'>
           <div className='bg-light/90 w-14 h-14 rounded-full flex items-center justify-center'>
@@ -42,6 +45,7 @@ const Services = () => {
             Super secure payment system
           </h3>
         </div>
+      </div>
       </div>
     </section>
   );
