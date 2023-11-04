@@ -4,13 +4,13 @@
 
 /* base style */
 
-body {
-  @apply bg-light_dark;
-}
+
 html {
   --scrool-behavior: smooth !important;
   scroll-behavior: smooth !important;
 }
+
+
 /* main {
   @apply mt-20;
 } */

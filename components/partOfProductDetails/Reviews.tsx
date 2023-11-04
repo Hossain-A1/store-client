@@ -28,7 +28,6 @@ const Reviews: React.FC<ReviewsProps> = ({ review }) => {
       <h2 className='flex justify-start items-center text-lg text-orange/70'>
         {makeReviews}
       </h2>
-      
     </div>
   );
 };

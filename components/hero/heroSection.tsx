@@ -6,7 +6,8 @@ import { buttonVariance } from "../ui/Button";
 
 const HeroSection = () => {
   return (
-    <section className='container section-p h-[calc(100vh-5rem)] '>
+   <main className="mt-10">
+     <section className='container section-p h-[calc(100vh-5rem)] '>
       <div className='grid max-lg:grid-cols-1 grid-cols-2 gap-10 '>
         <div className='space-y-5'>
           <SectionTitle
@@ -35,6 +36,7 @@ const HeroSection = () => {
         </div>
       </div>
     </section>
+   </main>
   );
 };
 

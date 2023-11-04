@@ -4,11 +4,13 @@ import ProductItem from "./ProductItem";
 import useFetch from "@/hooks/use-fetch";
 import Loading from "../shared/Loading";
 import Error from "../shared/Error";
+import SectionTitle from "../shared/SectionTitle";
 
 const Products = () => {
   const { data: products, error, isLoading } = useFetch("/api/products");
   return (
-    <div className='wrapper section-p'>
+    <div className='container section-p'>
+      <SectionTitle subtitle='Explore' title='Our Products' />
       {isLoading && <Loading isLoading={isLoading} />}
       {error && <Error error={error.message} />}
       {products && products?.length > 0 && (

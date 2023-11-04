@@ -3,7 +3,7 @@ import SectionTitle from "../shared/SectionTitle";
 
 const Contact = () => {
   return (
-    <div className='wrapper section-p'>
+    <div className='container section-p'>
       <SectionTitle
         subtitle='nur store'
         title='get in tuch'

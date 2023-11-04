@@ -13,8 +13,8 @@ interface ProductItemProps {
 const ProductItem: React.FC<ProductItemProps> = ({ productData }) => {
   return (
     <div className='h-[30rem'>
-      <div className='shadow-sm flex flex-col items-center gap-3  rounded-lg h-full'>
-        <div className='h-[18rem] overflow-hidden'>
+      <div className='shadow-sm flex flex-col items-center gap-3  rounded-lg h-full p-5'>
+        <div className='h-[18rem] w-full overflow-hidden rounded'>
           <Link
             href={`/products/${productData._id}`}
             className='w=[18rem] h-[18rem] inline-block'

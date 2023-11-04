@@ -45,7 +45,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
             </del>
             <hr className='border border-light_dark w-1/2' />
 
-            <div className="space-y-2">
+            <div className='space-y-2'>
               <h3 className='text-blue font-medium text-sm'>
                 <span>FREE</span> Returns
               </h3>
@@ -90,19 +90,18 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
                   </p>
                 </div>
               </div>
-
             </div>
             <hr className='border border-light_dark w-full' />
 
             <p className='text-sm'>{productItem?.description}</p>
-          </div>
 
-          <Link
-            href='/cart'
-            className={cn(buttonVariance({ variant: "halloween" }))}
-          >
-            Add to Cart
-          </Link>
+            <Link
+              href='/cart'
+              className={cn(buttonVariance({ variant: "halloween" }))}
+            >
+              Add to Cart
+            </Link>
+          </div>
         </div>
       )}
     </div>

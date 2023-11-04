@@ -13,7 +13,7 @@ interface FeatureItemProps {
 const FeatureItem: React.FC<FeatureItemProps> = ({ productData }) => {
   return (
     <div className='mt-5'>
-      <div className='shadow-sm bg-light flex flex-col  gap-5 py-5 rounded-lg'>
+      <div className='shadow-sm bg-light flex flex-col  gap-5 p-5 rounded-lg'>
         <h2 className='h-[2rem] text-center'>{productData.title}</h2>
 
         <Link
@@ -25,12 +25,12 @@ const FeatureItem: React.FC<FeatureItemProps> = ({ productData }) => {
             width={640}
             src={productData.images[0]}
             alt={productData.category}
-            className='w-full h-full object-cover'
+            className='w-full h-full object-cover  rounded'
           />
         </Link>
 
-        <div className='flex justify-around items-center '>
-          <span>
+        <div className='flex justify-between items-center '>
+          <span className="text-xl font-semibold">
             <CurrencyFormatter amount={productData.price} />
           </span>
 
