@@ -1,10 +1,13 @@
 "use client";
 
 import SectionTitle from "@/components/shared/SectionTitle";
-import { buttonVariance } from "@/components/ui/Button";
+import Button, { buttonVariance } from "@/components/ui/Button";
+import { axiosAuthPost } from "@/lib/axiosAuthPost";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useCallback, useState } from "react";
+import toast from "react-hot-toast";
 
 interface LoginPageData {
   email: string;
@@ -13,15 +16,35 @@ interface LoginPageData {
 
 const LoginPage = () => {
   const [modal, setModal] = useState(false);
-  const [formData, setFormData] = useState<LoginPageData> ({
+  const [formData, setFormData] = useState<LoginPageData>({
     email: "",
     password: "",
   });
 
-  const handleLogInSubmit = useCallback(async (e: React.SyntheticEvent) => {
-    e.preventDefault();
-    console.log(formData);
-  }, [formData]);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const router = useRouter();
+
+  const handleLogInSubmit = useCallback(
+    async (e: React.SyntheticEvent) => {
+      e.preventDefault();
+      setIsLoading(true);
+      const data = await axiosAuthPost("/api/auth/login", formData);
+
+      if (data) {
+        setIsLoading(false);
+        setFormData({
+          email: "",
+          password: "",
+        });
+        toast.success("Login successfull");
+        router.push("/");
+      } else {
+        setIsLoading(false);
+      }
+    },
+    [formData, router]
+  );
+
   return (
     <div className='container section-p  flex flex-col items-center  justify-center gap-5 h-screen relative  '>
       <div className='absolute top-5 space-y-3'>
@@ -46,9 +69,9 @@ const LoginPage = () => {
             onChange={(e) =>
               setFormData({ ...formData, email: e.target.value })
             }
-            autoComplete="username"
+            autoComplete='username'
             type='email'
-            id="email"
+            id='email'
             placeholder='e.g, user@shop.net'
             className='py-2 max-lg:py-1 px-4 rounded-lg outline-none border-2 border-light focus:border-orange eq text-sm'
           />
@@ -61,18 +84,19 @@ const LoginPage = () => {
               setFormData({ ...formData, password: e.target.value })
             }
             type='password'
-            id="password"
-            autoComplete="current-password"
+            id='password'
+            autoComplete='current-password'
             placeholder='e.g, Abc******!'
             className='py-2 px-4 rounded-lg outline-none border-2 border-light focus:border-orange eq text-sm max-lg:py-1'
           />
 
-          <button
+          <Button
             type='submit'
+            isLoading={isLoading}
             className={cn(buttonVariance({ variant: "ocen" }))}
           >
             Login
-          </button>
+          </Button>
           <p>
             <span className='text-black/50'>Do not have an account?</span>{" "}
             <Link href='/sign-up' className='link-item'>

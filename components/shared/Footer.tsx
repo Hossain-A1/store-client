@@ -14,7 +14,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className='flex max-lg:flex-col justify-around gap-10 col-span-2'>
+      <div className='flex max-lg:flex-col max-lg:justify-center justify-around gap-10 col-span-2'>
         <ul className='flex flex-col gap-3 items-center  '>
           <h2 className='text-md text-light/60 font-semibold underline underline-offset-4 uppercase'>
             Quick Links
@@ -38,7 +38,7 @@ const Footer = () => {
           </li>
         </ul>
 
-        <ul>
+        <div className='flex flex-col gap-3 items-center  '>
           <h2 className='text-md text-light/60 font-semibold underline underline-offset-4 uppercase'>
             company
           </h2>
@@ -52,7 +52,7 @@ const Footer = () => {
               Contact
             </Link>
           </li>
-        </ul>
+        </div>
         <div className='flex flex-col items-center gap-5'>
           <h2 className='text-md text-light/60 font-semibold underline underline-offset-4 uppercase'>
             {" "}

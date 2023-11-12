@@ -23,14 +23,14 @@ const HorizontalTab: React.FC<HorizontalTabProps> = ({
     [onClick]
   );
   return (
-    <div className='container'>
+    <div className='container '>
       <div className='flex items-center justify-center'>
         {tabs?.map((tab: string, index: number) => (
           <button
             onClick={() => buttonClick(index)}
             key={index}
             className={cn(
-              "border-gray flex h-[4rem] w-[15rem] items-center justify-center whitespace-nowrap border px-6 py-3 text-center text-lg font-semibold uppercase  tracking-widest",
+              "border-gray flex  lg:h-[4rem] h-[2rem] lg:w-[15rem] w-full items-center justify-center whitespace-nowrap border lg:px-6 px-0 py-3 text-center text-lg font-semibold uppercase  tracking-widest",
               index === 0 && "rounded-bl-2xl",
               index === tabs.length - 1 && "rounded-tr-2xl",
               shouldOpenTab === index && "bg-orange text-dark"
