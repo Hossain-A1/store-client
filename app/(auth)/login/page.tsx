@@ -4,10 +4,12 @@ import SectionTitle from "@/components/shared/SectionTitle";
 import Button, { buttonVariance } from "@/components/ui/Button";
 import { axiosAuthPost } from "@/lib/axiosAuthPost";
 import { cn } from "@/lib/utils";
+import { login } from "@/redux/features/auth/authSlice";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useCallback, useState } from "react";
 import toast from "react-hot-toast";
+import {useDispatch} from "react-redux"
 
 interface LoginPageData {
   email: string;
@@ -23,7 +25,7 @@ const LoginPage = () => {
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const router = useRouter();
-
+const dispatch = useDispatch()
   const handleLogInSubmit = useCallback(
     async (e: React.SyntheticEvent) => {
       e.preventDefault();
@@ -36,6 +38,7 @@ const LoginPage = () => {
           email: "",
           password: "",
         });
+        dispatch(login(data))
         toast.success("Login successfull");
         router.push("/");
       } else {
@@ -61,7 +64,7 @@ const LoginPage = () => {
       >
         {/* sign-in */}
         <div className='flex flex-col gap-3 max-lg:gap-2 w-[20rem] max-lg:w-full max-lg:h-[13rem] h-[20rem] justify-center bg-orange/10 p-10 rounded-lg overflow-hidden mt-10 shadow-2xl'>
-          <label htmlFor='name' className='max-lg:text-sm'>
+          <label htmlFor='email' className='max-lg:text-sm'>
             Email
           </label>
           <input
@@ -75,7 +78,7 @@ const LoginPage = () => {
             placeholder='e.g, user@shop.net'
             className='py-2 max-lg:py-1 px-4 rounded-lg outline-none border-2 border-light focus:border-orange eq text-sm'
           />
-          <label htmlFor='name' className='max-lg:text-sm'>
+          <label htmlFor='password' className='max-lg:text-sm'>
             Password
           </label>
           <input

@@ -33,7 +33,7 @@ const Offer = () => {
                 )
                 ?.slice(2, 6)
                 ?.map((item: productDataType) => (
-                  <div className='lg:w-[6rem] lg:h-[6rem] md:h-[8rem] md:w-[8rem] h-[3.7rem] w-[3.7rem] p-2 space-y-2 bg-dark/30'>
+                  <div key={item._id} className='lg:w-[6rem] lg:h-[6rem] md:h-[8rem] md:w-[8rem] h-[3.7rem] w-[3.7rem] p-2 space-y-2 bg-dark/30'>
                     <Image
                       src={item.images[3]}
                       alt=''
@@ -70,7 +70,7 @@ const Offer = () => {
                 .filter((item: productDataType) => item?.category === "Variety")
                 ?.slice(1, 5)
                 ?.map((item: productDataType) => (
-                  <div className='lg:w-[6rem] lg:h-[6rem] md:h-[8rem] md:w-[8rem] h-[3.7rem] w-[3.7rem] p-2 space-y-2 bg-dark/30 '>
+                  <div key={item._id} className='lg:w-[6rem] lg:h-[6rem] md:h-[8rem] md:w-[8rem] h-[3.7rem] w-[3.7rem] p-2 space-y-2 bg-dark/30 '>
                     <Image
                       src={item.images[1]}
                       alt=''
@@ -107,7 +107,7 @@ const Offer = () => {
                 .filter((item: productDataType) => item.category === "Clothes")
                 ?.slice(0, 4)
                 ?.map((item: productDataType) => (
-                  <div className='lg:w-[6rem] lg:h-[6rem] md:h-[8rem] md:w-[8rem] h-[3.7rem] w-[3.7rem] p-2 space-y-2 bg-dark/30'>
+                  <div key={item._id} className='lg:w-[6rem] lg:h-[6rem] md:h-[8rem] md:w-[8rem] h-[3.7rem] w-[3.7rem] p-2 space-y-2 bg-dark/30'>
                     <Image
                       src={item.images[1]}
                       alt=''
@@ -145,7 +145,7 @@ const Offer = () => {
                 )
                 ?.slice(0, 4)
                 ?.map((item: productDataType) => (
-                  <div className='lg:w-[6rem] lg:h-[6rem] md:h-[8rem] md:w-[8rem] h-[3.7rem] w-[3.7rem] p-2 space-y-2 bg-dark/30'>
+                  <div key={item._id} className='lg:w-[6rem] lg:h-[6rem] md:h-[8rem] md:w-[8rem] h-[3.7rem] w-[3.7rem] p-2 space-y-2 bg-dark/30'>
                     <Image
                       src={item.images[1]}
                       alt=''

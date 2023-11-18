@@ -38,7 +38,7 @@ const Footer = () => {
           </li>
         </ul>
 
-        <div className='flex flex-col gap-3 items-center  '>
+        <ul className='flex flex-col gap-3 items-center  '>
           <h2 className='text-md text-light/60 font-semibold underline underline-offset-4 uppercase'>
             company
           </h2>
@@ -52,8 +52,8 @@ const Footer = () => {
               Contact
             </Link>
           </li>
-        </div>
-        <div className='flex flex-col items-center gap-5'>
+        </ul>
+        <ul className='flex flex-col items-center gap-5'>
           <h2 className='text-md text-light/60 font-semibold underline underline-offset-4 uppercase'>
             {" "}
             LEGAL
@@ -67,9 +67,9 @@ const Footer = () => {
           <Link href='#' className='text-sm'>
             Cookie policy
           </Link>
-        </div>
+        </ul>
 
-        <div className='social text-light flex flex-col items-center gap-5'>
+        <ul className='social text-light flex flex-col items-center gap-5'>
           <h2 className='text-md text-light/60 font-semibold underline underline-offset-4 uppercase'>
             Social
           </h2>
@@ -86,7 +86,7 @@ const Footer = () => {
               <FaTwitter className='text-4xl' />
             </span>
           </div>
-        </div>
+        </ul>
       </div>
     </footer>
   );
