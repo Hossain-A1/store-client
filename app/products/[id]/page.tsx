@@ -26,7 +26,7 @@ const ProductDetailsPage = ({ params }: { params: { id: string } }) => {
       )}
 
       {!isLoading && (
-        <div className='container section-p'>
+        <div className='container section-p mt-10'>
           <Redirect />
           <ProductDetails productItem={productItem} isLoading={isLoading} />
         </div>

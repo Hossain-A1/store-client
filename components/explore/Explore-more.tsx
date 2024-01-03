@@ -4,8 +4,7 @@ import Link from "next/link";
 
 const Explore = () => {
   return (
-    <div className="pt-10">
-      <div className='slider'></div>
+    <div className="">
 
       <hr className='border border-dark/10 ' />
       <div className='my-5'>

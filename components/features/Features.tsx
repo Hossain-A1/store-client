@@ -14,11 +14,11 @@ interface FeatureData {
   native?: boolean;
 }
 
-const Feature = ({ native }: { native: FeatureData }) => {
+const FeatureSection = ({ native }: { native?: FeatureData }) => {
   const { error, isLoading, data: products } = useFetch("/api/products");
 
   return (
-    <div className='container section-p '>
+    <div className='container mt-10'>
       <SectionTitle subtitle='Our' title='Features' />
 
       {isLoading && <Loading isLoading={isLoading} />}
@@ -81,4 +81,4 @@ const Feature = ({ native }: { native: FeatureData }) => {
   );
 };
 
-export default Feature;
+export default FeatureSection;

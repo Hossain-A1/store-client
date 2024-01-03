@@ -1,3 +1,5 @@
+"use client";
+
 import { productDataType } from "@/types/product.type";
 import ProductImages from "../partOfProductDetails/ProductImages";
 import Reviews from "../partOfProductDetails/Reviews";
@@ -11,6 +13,9 @@ import {
   TbBox,
   TbLockDollar,
 } from "react-icons/tb";
+import { useDispatch } from "react-redux";
+import { addToCart } from "@/redux/features/carts/cartSlice";
+import { useState } from "react";
 
 interface ProductDetailsProps {
   productItem: productDataType;
@@ -21,6 +26,9 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
   productItem,
   isLoading,
 }) => {
+  const [redMore,setRedMore] = useState<boolean >(false)
+  const dispatch = useDispatch();
+
   return (
     <div className='grid md:grid-cols-2 grid-cols-1 gap-10'>
       {/* left side */}
@@ -29,20 +37,22 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
       {productItem && (
         <div>
           <div className='flex flex-col gap-3 items-start text-dark'>
-            <h2>{productItem?.title}</h2>
+            <h1>{productItem?.title}</h1>
 
-            <div className='flex gap-1 items-center justify-start'>
-              <span className='text-sm'>{productItem?.rating}</span>
+            <div className='flex gap-2 items-center justify-start'>
               <Reviews review={productItem} />
-              <p className='text-sm'>(300) ratings</p>
+              <span className='text-sm font-bold'>({productItem?.rating})</span>
+              <p className='text-sm text-blue'>721 reviews</p>
+              <p className='text-sm text-violet'>2.3k Sold</p>
             </div>
 
-            <span className='font-bold text-xl tracking-widest'>
-              <CurrencyFormatter amount={productItem?.price} />
-            </span>
             <del className='text-xs'>
               <CurrencyFormatter amount={(productItem?.price * 3) / 2} />
             </del>
+            <span className='font-bold text-xl tracking-widest'>
+              <CurrencyFormatter amount={productItem?.price} />
+            </span>
+
             <hr className='border border-light_dark w-1/2' />
 
             <div className='space-y-2'>
@@ -93,9 +103,18 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
             </div>
             <hr className='border border-light_dark w-full' />
 
-            <p className='text-sm'>{productItem?.description}</p>
+            <p className='text-sm'>
+              {productItem?.description.substring(0, 142)}...{" "}
+              <span className='cursor-pointer text-blue' onClick={()=>setRedMore(true)}>See more</span>{" "}
+              {
+                redMore &&(
+                  <span>{productItem?.description.substring(142, 1000)}</span>
+                )
+              }
+            </p>
 
             <Link
+              onClick={() => dispatch(addToCart({ ...productItem, count: 1 }))}
               href='/cart'
               className={cn(buttonVariance({ variant: "halloween" }))}
             >

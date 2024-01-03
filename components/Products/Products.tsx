@@ -9,7 +9,7 @@ import SectionTitle from "../shared/SectionTitle";
 const Products = () => {
   const { data: products, error, isLoading } = useFetch("/api/products");
   return (
-    <div className='container section-p'>
+    <div className='container section-p mt-10'>
       <SectionTitle subtitle='Explore' title='Our Products' />
       {isLoading && <Loading isLoading={isLoading} />}
       {error && <Error error={error.message} />}

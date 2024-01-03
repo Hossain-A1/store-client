@@ -15,7 +15,7 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
         <p className='text-orange/90 text-lg'>{subtitle}</p>
         <h2 className='capitalize text-5xl text-dark font-semibold'>{title}</h2>
       </div>
-      <p className='w-3/4 text-xl'>{description}</p>
+      <p className='w-3/4 text-[1rem]'>{description}</p>
     </div>
   );
 };

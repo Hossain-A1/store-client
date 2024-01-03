@@ -1,6 +1,5 @@
 "use client";
 
-import SectionTitle from "@/components/shared/SectionTitle";
 import Button, { buttonVariance } from "@/components/ui/Button";
 import { axiosAuthPost } from "@/lib/axiosAuthPost";
 import { cn } from "@/lib/utils";
@@ -17,7 +16,6 @@ interface LoginPageData {
 }
 
 const LoginPage = () => {
-  const [modal, setModal] = useState(false);
   const [formData, setFormData] = useState<LoginPageData>({
     email: "",
     password: "",
@@ -39,7 +37,7 @@ const dispatch = useDispatch()
           password: "",
         });
         dispatch(login(data))
-        toast.success("Login successfull");
+        toast.success('Login has successfully!')
         router.push("/");
       } else {
         setIsLoading(false);
@@ -49,17 +47,11 @@ const dispatch = useDispatch()
   );
 
   return (
-    <div className='container section-p  flex flex-col items-center  justify-center gap-5 h-screen relative  '>
-      <div className='absolute top-5 space-y-3'>
-        <SectionTitle subtitle='go ahed' title='signup' />
-        <button className='text-blue/90' onClick={() => setModal(!modal)}>
-          Login<span className='text-dark'>/</span>
-        </button>
-        <Link href='/sign-up'>Signup</Link>
-      </div>
+    <div className='container section-p mt-10  flex flex-col items-center  justify-center gap-5 h-screen  '>
+       <h2>"Log in to explore our products."</h2>
 
       <form
-        className={cn(!modal ? "hidden" : "block ")}
+        
         onSubmit={handleLogInSubmit}
       >
         {/* sign-in */}

@@ -7,6 +7,7 @@ export type productDataType = {
   images: string[];
   description: string;
   price: number;
+  count:number;
   rating: number;
   odrer: orderType[];
   createdAt: string;

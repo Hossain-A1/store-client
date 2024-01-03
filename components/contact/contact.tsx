@@ -3,7 +3,7 @@ import SectionTitle from "../shared/SectionTitle";
 
 const Contact = () => {
   return (
-    <div className='container section-p'>
+    <div className='container section-p mt-10'>
       <SectionTitle
         subtitle='nur store'
         title='get in tuch'
@@ -61,29 +61,29 @@ const Contact = () => {
         </div>
       </div>
 
-      <form className='flex flex-col items-center gap-5 bg-orange/5 rounded-full shadow-xl py-5'>
+      <form className='flex flex-col items-center gap-5 bg-orange/5 rounded-full shadow-sm py-5'>
         <h2>
           How Can We Assist You? Fill Out the Form Below or Email Us Directly
         </h2>
         <input
           type='text'
           placeholder='name'
-          className='py-3 w-[16.3rem] xl:w-[30.3rem] px-6 rounded-lg  bg-dark/10 border outline-none border-orange'
+          className='py-3 w-[16.3rem] xl:w-[30.3rem] px-6 rounded-lg  bg-dark/10 border outline-none focus:border-orange eq'
         />
         <input
           type='email'
           placeholder='email'
-          className='py-3 w-[16.3rem] xl:w-[30.3rem] px-6 rounded-lg bg-dark/10 border outline-none border-orange'
+          className='py-3 w-[16.3rem] xl:w-[30.3rem] px-6 rounded-lg bg-dark/10 border outline-none focus:border-orange eq'
         />
         <textarea
           name='message'
           id=''
-          className='w-[16.3rem] xl:w-[30.3rem] py-3 px-6 text-sm border border-orange h-32 outline-none resize-none rounded-lg'
+          className='w-[16.3rem] xl:w-[30.3rem] py-3 px-6 text-sm border focus:border-orange h-32 outline-none resize-none rounded-lg eq'
           placeholder='your message'
         ></textarea>
         <button
           type='submit'
-          className='py-3 px-6 rounded-lg w-[16.3rem]  xl:w-[30.3rem] bg-dark/10 border outline-none border-orange hover:bg-orange eq'
+          className='py-3 px-6 rounded-lg w-[16.3rem]  xl:w-[30.3rem] bg-dark/10 border outline-none hover:bg-orange eq'
         >
           Submit
         </button>

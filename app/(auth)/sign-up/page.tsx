@@ -1,8 +1,6 @@
 "use client";
 import React, { useCallback, useState } from "react";
 import { cn } from "@/lib/utils";
-import SectionTitle from "@/components/shared/SectionTitle";
-import Link from "next/link";
 import Button, { buttonVariance } from "@/components/ui/Button";
 import { useRouter } from "next/navigation";
 import { axiosAuthPost } from "@/lib/axiosAuthPost";
@@ -18,7 +16,6 @@ interface SignupPageData {
 }
 
 const SignupPage = () => {
-  const [modal2, setModal2] = useState(false);
   const [formData, setFormData] = useState<SignupPageData>({
     name: "",
     email: "",
@@ -47,7 +44,7 @@ const SignupPage = () => {
             picUrl: "",
           });
           dispatch(login(data));
-          toast.success("Register successfull");
+          toast.success('Register has successfully!')
           router.push("/");
         } else {
           setIsLoading(false);
@@ -60,21 +57,15 @@ const SignupPage = () => {
     [formData]
   );
   return (
-    <div className='container section-p  flex flex-col items-center  justify-center gap-5 h-screen relative  '>
-      <div className='absolute top-5 space-y-3'>
-        <SectionTitle subtitle='go ahed' title='signup' />
-        <button className='text-blue/90' onClick={() => setModal2(!modal2)}>
-          Signup/
-        </button>
-        <Link href='/login'>Login</Link>
-      </div>
+    <div className='container section-p mt-10  flex flex-col items-center  justify-center gap-5 h-screen  '>
+        <h2>"Sign up to explore our products."</h2>
 
-      <form
-        className={cn(!modal2 ? "hidden" : "block mt-20 w-[24rem]  ")}
-        onSubmit={handleSignUpSubmit}
+
+      <form onSubmit={handleSignUpSubmit}
+      className="w-[20rem] h-full"
       >
         {/* sign-in */}
-        <div className='flex flex-col gap-3 px-5 py-2 w-full  justify-center bg-orange/10  rounded-lg overflow-hidden  shadow-2xl'>
+        <div className='flex flex-col gap-3 px-5 py-2 w-full h-full justify-center bg-orange/10  rounded-lg overflow-hidden  shadow-2xl'>
           <label htmlFor='name' className='max-lg:text-sm'>
             Name
           </label>

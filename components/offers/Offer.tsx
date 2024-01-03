@@ -8,7 +8,7 @@ import SectionTitle from "../shared/SectionTitle";
 const Offer = () => {
   const { data, isLoading } = useFetch("/api/products");
   return (
-    <div className="container section-p">
+    <div className="container section-p space-y-10">
       <div className=''>
         <SectionTitle
           title='Grab Our Limited-Time Package Offers Now!'
