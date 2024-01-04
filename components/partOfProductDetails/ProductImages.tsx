@@ -7,11 +7,12 @@ interface ProductItemProps {
 const ProductImages: React.FC<ProductItemProps> = ({ productItem }) => {
   const [images, setImages] = useState(productItem?.images[0]);
 
+  
   return (
     <div className='  grid grid-cols-4 gap-5 section-p'>
       <div className='flex flex-col  items-start gap-5  '>
         {productItem?.images.map((image, i) => (
-          <figure key={i} className='w-[4rem] h-[4rem] '>
+          <figure key={i} className='w-[4rem] h-[4rem]  '>
             <Image
               src={image}
               priority
@@ -26,12 +27,12 @@ const ProductImages: React.FC<ProductItemProps> = ({ productItem }) => {
       </div>
 
       {images && (
-        <div className='flex justify-center items-center col-span-3 overflow-hidden w-full h-full shadow-xl bg-red'>
+        <div className='flex justify-center items-center col-span-3 overflow-hidden w-full h-full shadow-xl '>
           <Image
             src={images}
             priority
-            width={400}
-            height={600}
+            width={1080}
+            height={740}
             alt={productItem?.title}
             className='object-cover w-full h-full'
           />

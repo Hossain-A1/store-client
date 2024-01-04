@@ -7,13 +7,13 @@ import Offer from "@/components/offers/Offer";
 
 const HomePage = () => {
   return (
-    <>
+    <main>
       <HeroSection />
       <Offer />
       <FeatureSection />
       <Services/>
       <Explore/>
-    </>
+    </main>
   );
 };
 
