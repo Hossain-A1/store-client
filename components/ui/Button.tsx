@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils';
 import { Loader2 } from 'lucide-react';
 
 export const buttonVariance= cva(
-  'inline-block text-center px-6 py-2 rounded-lg border font-medium active:scale-105 eq',
+  'inline-block text-center px-6 py-2 rounded-md border font-medium active:scale-105 eq',
 
   {
     variants: {

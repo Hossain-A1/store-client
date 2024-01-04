@@ -10,6 +10,7 @@ import {
   incrementItem,
   removeCart,
 } from "@/redux/features/carts/cartSlice";
+import CheckOut from "./CheckOut";
 
 const Cart = () => {
   const { cartItems } = useSelector((state: RootState) => state.cart);
@@ -35,7 +36,7 @@ const Cart = () => {
           ? ` You've added (${cartItems.length}) Cart`
           : "No items in your shopping cart yet."}
       </h2>
-      <div className='grid lg:grid-cols-3 grid-cols-1 gap-5 '>
+      <div className='grid lg:grid-cols-3 grid-cols-1 gap-10 '>
         <div className='col-span-2 w-full space-y-5'>
           <ul className='grid grid-cols-4 border-b'>
             <li className='col-span-2'>Item</li>
@@ -112,7 +113,9 @@ const Cart = () => {
         </div>
 
         {/* for checkout */}
-        <div className='checkout'></div>
+      
+          <CheckOut items={cartItems} />
+       
       </div>
 
       <div className='w-4/5'>
