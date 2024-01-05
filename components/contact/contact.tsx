@@ -1,7 +1,18 @@
-import React from "react";
-import SectionTitle from "../shared/SectionTitle";
+"use client";
 
+import React, { useRef } from "react";
+import SectionTitle from "../shared/SectionTitle";
+import toast from "react-hot-toast";
 const Contact = () => {
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const contactSubmit = (e: React.SyntheticEvent) => (
+    e.preventDefault(),
+    toast.success("Your message submitted!", {
+      position: "bottom-left",
+    }),
+    formRef.current?.reset()
+  );
   return (
     <div className='container section-p mt-10'>
       <SectionTitle
@@ -61,23 +72,30 @@ const Contact = () => {
         </div>
       </div>
 
-      <form className='flex flex-col items-center gap-5 bg-orange/5 rounded-full shadow-sm py-5'>
+      <form
+        ref={formRef}
+        className='flex flex-col items-center gap-5 bg-orange/5 rounded-full shadow-sm py-5'
+        onSubmit={contactSubmit}
+      >
         <h2>
           How Can We Assist You? Fill Out the Form Below or Email Us Directly
         </h2>
         <input
           type='text'
           placeholder='name'
+          required
           className='py-3 w-[16.3rem] xl:w-[30.3rem] px-6 rounded-lg  bg-dark/10 border outline-none focus:border-orange eq'
         />
         <input
           type='email'
           placeholder='email'
+          required
           className='py-3 w-[16.3rem] xl:w-[30.3rem] px-6 rounded-lg bg-dark/10 border outline-none focus:border-orange eq'
         />
         <textarea
           name='message'
-          id=''
+          id='message'
+          required
           className='w-[16.3rem] xl:w-[30.3rem] py-3 px-6 text-sm border focus:border-orange h-32 outline-none resize-none rounded-lg eq'
           placeholder='your message'
         ></textarea>

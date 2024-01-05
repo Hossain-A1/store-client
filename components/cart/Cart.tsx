@@ -15,7 +15,6 @@ import CheckOut from "./CheckOut";
 const Cart = () => {
   const { cartItems } = useSelector((state: RootState) => state.cart);
   const dispatch = useDispatch();
-  console.log(cartItems);
 
   const total = () => {
     const calcTotal = cartItems.reduce(
@@ -29,22 +28,22 @@ const Cart = () => {
   };
 
   return (
-    <section className='container section-p mt-10 space-y-5'>
+    <section className='container section-p mt-10 space-y-5 '>
       <h2 className='text-center text-2xl font-semibold'>"Shopping Cart"</h2>
       <h2 className='text-center text-xl font-semibold'>
         {cartItems.length >= 1
           ? ` You've added (${cartItems.length}) Cart`
           : "No items in your shopping cart yet."}
       </h2>
-      <div className='grid lg:grid-cols-3 grid-cols-1 gap-10 '>
-        <div className='col-span-2 w-full space-y-5'>
+      <div className='grid lg:grid-cols-3 grid-cols-1 gap-10   '>
+        <div className='col-span-2 w-full space-y-5 '>
           <ul className='grid grid-cols-4 border-b'>
             <li className='col-span-2'>Item</li>
             <li className='text-end'>Quantity</li>
             <li className='text-end'>Item total</li>
           </ul>
 
-          <div className='w-full space-y-5 '>
+          <div className='w-full space-y-5'>
             {cartItems.map((item) => (
               <div
                 key={item._id}
@@ -109,23 +108,24 @@ const Cart = () => {
                 </div>
               </div>
             ))}
+
+            {cartItems.length >= 1 && (
+              <div className='w-full bg-slate-200 '>
+                <span className='uppercase text-center block'>
+                  Grand Total:{" "}
+                  <strong className='font-bold text-xl'>{total()}</strong>{" "}
+                </span>
+                <p className='text-center '>
+                  "The displayed product prices on our site already account for
+                  added taxes."
+                </p>
+              </div>
+            )}
           </div>
         </div>
 
         {/* for checkout */}
-      
-          <CheckOut items={cartItems} />
-       
-      </div>
-
-      <div className='w-4/5'>
-        <span className='uppercase text-center block'>
-          Grand Total: <strong className='font-bold text-xl'>{total()}</strong>{" "}
-        </span>
-        <p className='text-center '>
-          "The displayed product prices on our site already account for added
-          taxes."
-        </p>
+        {cartItems.length >= 1 && <CheckOut items={cartItems} />}
       </div>
     </section>
   );
