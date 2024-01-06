@@ -11,6 +11,9 @@ import {
   removeCart,
 } from "@/redux/features/carts/cartSlice";
 import CheckOut from "./CheckOut";
+import Button, { buttonVariance } from "../ui/Button";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 const Cart = () => {
   const { cartItems } = useSelector((state: RootState) => state.cart);
@@ -121,6 +124,11 @@ const Cart = () => {
                 </p>
               </div>
             )}
+
+            <div className="flex justify-between">
+            <Button variant='outline' onClick={()=>dispatch(clearCart())}>Clear All cart</Button>
+            <Link href='/products' className={cn(buttonVariance({variant:"success"}))}>Back to Shopping</Link>
+            </div>
           </div>
         </div>
 
