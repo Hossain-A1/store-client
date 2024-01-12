@@ -16,7 +16,7 @@ const Navber = () => {
   const [profileTab, setprofiletab] = useState<boolean>(false);
   const pathName = usePathname();
   const session = useSelector((state: RootState) => state.auth.userAndToken);
-  const {cartItems} = useSelector((state: RootState) => state.cart);
+  const { cartItems } = useSelector((state: RootState) => state.cart);
 
   const profileContents = [
     { href: "/manage-profile", label: "profile" },
@@ -31,7 +31,7 @@ const Navber = () => {
     <>
       <header
         className=' h-20
-       flex flex-col justify-center items-center bg-dark text-light fixed top-0 left-0 right-0 z-[9999] '
+       flex flex-col justify-center items-center bg-dark text-light fixed top-0 left-0 right-0 z-[9999] max-lg:hidden '
       >
         <nav className=' container mx-10  flex items-center justify-between  '>
           <h2 className='text-2xl'>Nur store</h2>
@@ -117,8 +117,7 @@ const Navber = () => {
               <div className='flex items-center gap-5'>
                 <Link
                   href='sign-up'
-                  onClick={() => dispatch(logout())
-                  }
+                  onClick={() => dispatch(logout())}
                   className={`${
                     pathName === "/login" ? "nav-active " : ""
                   } ${cn(buttonVariance({ variant: "halloween" }))}`}
@@ -127,7 +126,7 @@ const Navber = () => {
                 </Link>
                 <div
                   className='relative w-12 h-12 rounded-full shadow-md cursor-pointer group'
-                  onClick={() => setprofiletab(!profileTab)}
+                  onMouseLeave={() => setprofiletab(!profileTab)}
                 >
                   <Image
                     src={session?.user?.picUrl}
@@ -141,7 +140,7 @@ const Navber = () => {
                   {/* profile pop-up here */}
 
                   {profileTab && (
-                    <ul className='absolute right-0 top-[calc(100%+1rem)] z-[102] flex flex-col items-start gap-5 rounded-xl bg-white px-20 py-5 shadow-md'>
+                    <ul className='absolute  right-0 top-[calc(100%+1rem)] z-[102] flex flex-col items-start gap-5 rounded-xl bg-white px-20 py-5 shadow-md'>
                       {session.user?.role === "admin" &&
                         profileContents.map((item) => (
                           <li key={item.label}>

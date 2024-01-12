@@ -1,12 +1,12 @@
 import Image from "next/image";
-import Button, { buttonVariance } from "../ui/Button";
+import  { buttonVariance } from "../ui/Button";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 const heroSection = () => {
   return (
-    <section className='container section-p mt-10 h-[calc(100vh-5rem)] max-lg:h-auto'>
-      <div className=' grid lg:grid-cols-2 grid-cols-1 gap-10 items-center h-full '>
+    <section className='container px-5 section-p mt-10 h-[calc(100vh-5rem)] max-lg:h-auto'>
+      <div className=' grid lg:grid-cols-2 grid-cols-1 gap-10 items-center  h-full '>
         <div className='space-y-5'>
           <h2 className='capitalize text-6xl font-light'>
             Discover new collections

@@ -10,9 +10,9 @@ const Services = () => {
      <div>
       <SectionTitle subtitle="Providing" title="Services"/>
      <div className=' flex flex-col  items-center'>
-      <div className='grid grid-cols-3 max-md:grid-cols-1 gap-5  items-center'>
-        <div className='w-[15rem] h-[15rem] bg-dark flex flex-col justify-center ml-10 lg:ml-0 gap-3 items-center shadow-md rounded-xl'>
-          <div className='bg-light/90 w-14 h-14 rounded-full flex items-center justify-center'>
+      <div className='grid lg:grid-cols-3 grid-cols-1 gap-5 justify-center  items-center'>
+        <div className='w-[15rem] h-[15rem] bg-dark flex flex-col justify-center  lg:ml-0 gap-3 items-center shadow-md rounded-xl'>
+          <div className='bg-light/70 w-14 h-14 rounded-full flex items-center justify-center'>
             <TbTruckDelivery className='lg:text-4xl text-2xl text-orange  ' />
           </div>
           <h3 className='capitalize text-sm text-light font-normal'>
@@ -20,7 +20,7 @@ const Services = () => {
           </h3>
         </div>
         <div className='space-y-5 '>
-          <div className='w-[15rem] h-[15rem] bg-orange flex flex-col justify-center gap-5 items-center shadow-md rounded-xl'>
+          <div className='w-[15rem] h-[15rem] bg-orange flex flex-col justify-center gap-5 items-center shadow-md rounded-xl '>
             <div className='bg-light/90 w-14 h-14 rounded-full flex items-center justify-center'>
               <MdSecurity className='lg:text-4xl text-2xl text-violet-700 text-orange  ' />
             </div>

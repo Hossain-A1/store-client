@@ -35,7 +35,7 @@ const FeatureSection = ({ native }: { native?: FeatureData }) => {
                 .sort(
                   (a: productDataType, b: productDataType) => a.price - b.price
                 )
-                .slice(2, 5)
+                .slice(1, 5)
                 .map((item: productDataType) => (
                   <FeatureItem key={item._id} productData={item} />
                 ))}
@@ -46,7 +46,7 @@ const FeatureSection = ({ native }: { native?: FeatureData }) => {
                 .sort(
                   (a: productDataType, b: productDataType) => a.price - b.price
                 )
-                .slice(0, 3)
+                .slice(0, 4)
                 .map((item: productDataType) => (
                   <FeatureItem key={item._id} productData={item} />
                 ))}
@@ -57,7 +57,7 @@ const FeatureSection = ({ native }: { native?: FeatureData }) => {
                 .sort(
                   (a: productDataType, b: productDataType) => a.price - b.price
                 )
-                .slice(0, 3)
+                .slice(0, 4)
                 .map((item: productDataType) => (
                   <FeatureItem key={item._id} productData={item} />
                 ))}

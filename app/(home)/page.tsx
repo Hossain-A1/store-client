@@ -1,9 +1,9 @@
 import Services from "@/components/Services";
+import PositiveReviews from "@/components/about/PositiveReviews";
 import Explore from "@/components/explore/Explore-more";
 import FeatureSection from "@/components/features/Features";
 import HeroSection from "@/components/hero/heroSection";
 import Offer from "@/components/offers/Offer";
-
 
 const HomePage = () => {
   return (
@@ -11,8 +11,9 @@ const HomePage = () => {
       <HeroSection />
       <Offer />
       <FeatureSection />
-      <Services/>
-      <Explore/>
+      <Services />
+      <PositiveReviews/>
+      <Explore />
     </main>
   );
 };

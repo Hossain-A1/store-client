@@ -26,7 +26,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
   productItem,
   isLoading,
 }) => {
-  const [redMore,setRedMore] = useState<boolean >(false)
+  const [redMore, setRedMore] = useState<boolean>(true);
   const dispatch = useDispatch();
 
   return (
@@ -104,13 +104,16 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
             <hr className='border border-light_dark w-full' />
 
             <p className='text-sm'>
-              {productItem?.description.substring(0, 142)}...{" "}
-              <span className='cursor-pointer text-blue' onClick={()=>setRedMore(true)}>See more</span>{" "}
-              {
-                redMore &&(
-                  <span>{productItem?.description.substring(142, 1000)}</span>
-                )
-              }
+              {productItem?.description.substring(0, 142)}{" "}
+              <span
+                className={`${redMore ? "cursor-pointer text-blue" : "hidden"}`}
+                onClick={() => setRedMore(!redMore)}
+              >
+                See more...
+              </span>{" "}
+              {!redMore && (
+                <span>{productItem?.description.substring(142, 1000)}</span>
+              )}
             </p>
 
             <Link

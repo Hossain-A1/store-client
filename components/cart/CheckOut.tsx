@@ -4,6 +4,17 @@ import { TbTruckDelivery } from "react-icons/tb";
 import { CiLocationOn } from "react-icons/ci";
 import { cn } from "@/lib/utils";
 import { buttonVariance } from "../ui/Button";
+import { loadStripe } from "@stripe/stripe-js";
+import axios from "axios";
+
+// Stripe promise//
+const stripePromise = loadStripe(
+  process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY as string
+);
+if (!stripePromise) {
+  throw new Error("Not found Public key.");
+}
+
 interface CheckOutProps {
   items: productDataType[];
 }
@@ -11,7 +22,7 @@ interface CheckOutProps {
 const CheckOut: React.FC<CheckOutProps> = ({ items }) => {
   const total = () => {
     const calcTotal = items.reduce(
-      (acc, item) => (acc += item.price * item.count ),
+      (acc, item) => (acc += item.price * item.count),
       0
     );
     const fixedTotal = +calcTotal.toFixed(2) + 17;
@@ -19,22 +30,52 @@ const CheckOut: React.FC<CheckOutProps> = ({ items }) => {
 
     return subtotal;
   };
+
+  // stripe checkout
+  const handleCheckout = async () => {
+    const stripe = await stripePromise;
+
+    if (!stripe) {
+      throw new Error("Failed to load Stripe script");
+    }
+
+    const response = await axios.post(
+      `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/create-checkout-session`,
+      {
+        items: items,
+      }
+    );
+
+    const session = await response.data;
+
+    // Check if the session is valid
+    if (!session || !session.id) {
+      throw new Error("Invalid checkout session");
+    }
+
+    const result = await stripe.redirectToCheckout({
+      sessionId: response.data.id,
+    });
+
+    if (result?.error) {
+      console.log(result.error.message);
+    }
+  };
+
   return (
     <section>
       <div className='border py-3 mt-5'>
         <h2 className='font-medium text-sm px-3 mt-2'>Order Summary</h2>
         <div className='py-3 px-3'>
           {items.map((item) => (
-            <div>
-              <div className=''>
-                <div className='flex justify-between space-y-1'>
-                  <h3 className='text-sm text-gray'>
-                    {item.title.substring(0, 25)}..
-                  </h3>
-                  <h3 className='text-sm text-gray'>
-                    {<CurrencyFormatter amount={item.price * item.count} />}
-                  </h3>
-                </div>
+            <div key={item._id}>
+              <div className='flex justify-between space-y-1'>
+                <h3 className='text-sm text-gray'>
+                  {item.title.substring(0, 25)}..
+                </h3>
+                <h3 className='text-sm text-gray'>
+                  {<CurrencyFormatter amount={item.price * item.count} />}
+                </h3>
               </div>
             </div>
           ))}
@@ -68,15 +109,24 @@ const CheckOut: React.FC<CheckOutProps> = ({ items }) => {
           </div>
         </div>
 
-        <div className="flex justify-between px-3 py-3 border-t">
+        <div className='flex justify-between px-3 py-3 border-t'>
           <h2>Order Total</h2>
-          <strong className="text-xl">= {total()}</strong>
+          <strong className='text-xl'>= {total()}</strong>
         </div>
 
-        <div className="px-3 py-3 space-y-1">
-          <input type="text" className="py-2 px-2 bg-orange/30 text-center border border-gray rounded w-full" placeholder="Add  coupon code here" required />
-          <button className={cn(buttonVariance({variant:"success",size:'full'}) )} >Checkout</button>
-
+        <div className='px-3 py-3 space-y-1'>
+          <input
+            type='text'
+            className='py-2 px-2 bg-orange/30 text-center border border-gray rounded w-full'
+            placeholder='Add  coupon code here'
+            required
+          />
+          <button
+            onClick={handleCheckout}
+            className={cn(buttonVariance({ variant: "success", size: "full" }))}
+          >
+            Checkout
+          </button>
         </div>
       </div>
     </section>

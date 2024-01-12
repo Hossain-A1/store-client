@@ -8,24 +8,24 @@ import SectionTitle from "../shared/SectionTitle";
 const Offer = () => {
   const { data, isLoading } = useFetch("/api/products");
   return (
-    <div className="container section-p space-y-10">
+    <div className='container section-p space-y-10'>
       <div className=''>
         <SectionTitle
           title='Grab Our Limited-Time Package Offers Now!'
           subtitle='packages'
         />
       </div>
-      <div className='grid grid-cols-2 lg:grid-cols-4  items-center lg:gap-5 md:gap-5 gap-2'>
+      <div className='grid grid-cols-2 lg:grid-cols-4  items-center gap-5'>
         <Link
           href='/products'
-          className='bg-light lg:h-[24rem] md:h-[24rem] h-[18rem]  flex flex-col gap-5 items-center hover:brightness-90 eq shadow-sm'
+          className='bg-light h-full lg:h-[24rem] p-5   flex flex-col gap-3  items-center hover:brightness-90 eq shadow-sm'
         >
-          <h2 className='lg:text-2xl text-lg font-semibold capitalize text-center lg:h-[6rem] h-[5rem]'>
+          <h2 className='lg:text-2xl  text-lg font-light capitalize text-center '>
             Electronics | Up to 20% off
           </h2>
           {isLoading && <p className='text-dark'>Loading...</p>}
 
-          <div className='pictures  flex flex-wrap lg:gap-5 md:gap-5 gap-3  justify-center items-center'>
+          <div className='pictures h-full w-full  grid grid-cols-2 gap-5  justify-center items-center'>
             {data &&
               data
                 .filter(
@@ -33,17 +33,20 @@ const Offer = () => {
                 )
                 ?.slice(2, 6)
                 ?.map((item: productDataType) => (
-                  <div key={item._id} className='lg:w-[6rem] lg:h-[6rem] md:h-[8rem] md:w-[8rem] h-[3.7rem] w-[3.7rem] p-2 space-y-2 bg-dark/30'>
+                  <div
+                    key={item._id}
+                    className='w-full h-full space-y-2 bg-dark/30 p-1'
+                  >
                     <Image
                       src={item.images[3]}
-                      alt=''
+                      alt='offer image'
                       width={680}
                       height={320}
                       priority
                       className='h-full w-full object-cover'
                     />
                     <span className='lg:text-xs text-[0.60rem] text-dark -ml-2 font-medium'>
-                      {item.title.substring(0, 11)}
+                      {item.title.substring(0, 7)}
                     </span>
                   </div>
                 ))}
@@ -57,30 +60,33 @@ const Offer = () => {
 
         <Link
           href='/products'
-          className='bg-light lg:h-[24rem] md:h-[24rem] h-[18rem]  flex flex-col gap-5 items-center hover:brightness-90 eq shadow-sm'
+          className='bg-light lg:h-[24rem] md:h-[24rem] h-full justify-center gap-3 p-5 flex flex-col  items-center hover:brightness-90 eq shadow-sm'
         >
-          <h2 className='lg:text-2xl text-lg font-semibold capitalize text-center lg:h-[6rem] h-[5rem]'>
+          <h2 className='lg:text-2xl text-lg font-light capitalize text-center '>
             Varieties items | Up to 50% off
           </h2>
           {isLoading && <p className='text-dark'>Loading...</p>}
 
-          <div className='pictures  flex flex-wrap lg:gap-5 md:gap-5 gap-3  justify-center items-center'>
+          <div className='pictures h-full w-full grid grid-cols-2 gap-5   items-center'>
             {data &&
               data
                 .filter((item: productDataType) => item?.category === "Variety")
                 ?.slice(1, 5)
                 ?.map((item: productDataType) => (
-                  <div key={item._id} className='lg:w-[6rem] lg:h-[6rem] md:h-[8rem] md:w-[8rem] h-[3.7rem] w-[3.7rem] p-2 space-y-2 bg-dark/30 '>
+                  <div
+                    key={item._id}
+                    className='w-full h-full space-y-2 bg-dark/30 p-1 relative z-10'
+                  >
                     <Image
                       src={item.images[1]}
-                      alt=''
+                      alt='offer images'
                       width={680}
                       height={320}
                       priority
-                      className='h-full w-full object-cover'
+                      className='h-full w-full object-cover '
                     />
 
-                    <span className='flex justify-between w-[5.5rem] bg-red py-1 px-2 text-xs rounded font-medium -ml-2  text-light'>
+                    <span className='flex justify-between w-full py-1  bg-red  text-xs rounded font-medium   text-light absolute z-20 -bottom-5 '>
                       30% off <p className='text-dark text-xs'> Deal</p>
                     </span>
                   </div>
@@ -94,30 +100,33 @@ const Offer = () => {
         </Link>
         <Link
           href='/products'
-          className='bg-light lg:h-[24rem] md:h-[24rem] h-[18rem]  flex flex-col gap-5 items-center hover:brightness-90 eq shadow-sm'
+          className='bg-light lg:h-[24rem] md:h-[24rem] h-full justify-center gap-3  p-5 flex flex-col items-center hover:brightness-90 eq shadow-sm'
         >
-          <h2 className='lg:text-2xl text-lg font-semibold capitalize text-center lg:h-[6rem] h-[5rem]'>
+          <h2 className='lg:text-2xl text-lg font-light capitalize text-center '>
             Men && women outlet | up to 60% off
           </h2>
           {isLoading && <p className='text-dark'>Loading...</p>}
 
-          <div className='pictures  flex flex-wrap lg:gap-5 md:gap-5 gap-3  justify-center items-center'>
+          <div className=' pictures h-full w-full  grid grid-cols-2 gap-5   items-center'>
             {data &&
               data
                 .filter((item: productDataType) => item.category === "Clothes")
                 ?.slice(0, 4)
                 ?.map((item: productDataType) => (
-                  <div key={item._id} className='lg:w-[6rem] lg:h-[6rem] md:h-[8rem] md:w-[8rem] h-[3.7rem] w-[3.7rem] p-2 space-y-2 bg-dark/30'>
+                  <div
+                    key={item._id}
+                    className='w-full h-full space-y-2 bg-dark/30 p-1'
+                  >
                     <Image
                       src={item.images[1]}
-                      alt=''
+                      alt='offer images'
                       width={680}
                       height={320}
                       priority
                       className='h-full w-full object-cover'
                     />
                     <span className='lg:text-xs text-[0.60rem] text-dark -ml-2 font-medium'>
-                      {item.title.substring(0, 11)}
+                      {item.title.substring(0, 9)}
                     </span>
                   </div>
                 ))}
@@ -130,14 +139,14 @@ const Offer = () => {
         </Link>
         <Link
           href='/products'
-          className='bg-light lg:h-[24rem] md:h-[24rem] h-[18rem]  flex flex-col gap-5 items-center hover:brightness-90 eq shadow-sm'
+          className='bg-light lg:h-[24rem] md:h-[24rem] h-full justify-center gap-3 p-5 flex flex-col  items-center hover:brightness-90 eq shadow-sm'
         >
-          <h2 className='lg:text-2xl text-lg font-semibold capitalize text-center lg:h-[6rem] h-[5rem]'>
+          <h2 className='lg:text-2xl text-lg font-light capitalize text-center '>
             New arrivals in (9/2023) Electronics
           </h2>
           {isLoading && <p className='text-dark'>Loading...</p>}
 
-          <div className='pictures  flex flex-wrap lg:gap-5 md:gap-5 gap-3 justify-center items-center'>
+          <div className='pictures h-full w-full  grid grid-cols-2 gap-5  justify-center items-center'>
             {data &&
               data
                 .filter(
@@ -145,17 +154,20 @@ const Offer = () => {
                 )
                 ?.slice(0, 4)
                 ?.map((item: productDataType) => (
-                  <div key={item._id} className='lg:w-[6rem] lg:h-[6rem] md:h-[8rem] md:w-[8rem] h-[3.7rem] w-[3.7rem] p-2 space-y-2 bg-dark/30'>
+                  <div
+                    key={item._id}
+                    className='w-full h-full  space-y-2 bg-dark/30 p-1'
+                  >
                     <Image
                       src={item.images[1]}
-                      alt=''
+                      alt='offer image'
                       width={680}
                       height={320}
                       priority
                       className='h-full w-full object-cover'
                     />
                     <span className='lg:text-xs text-[0.60rem] text-dark -ml-2 font-medium'>
-                      {item.title.substring(0, 13)}
+                      {item.title.substring(0, 9)}
                     </span>
                   </div>
                 ))}

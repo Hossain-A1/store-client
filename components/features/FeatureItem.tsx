@@ -12,8 +12,8 @@ interface FeatureItemProps {
 
 const FeatureItem: React.FC<FeatureItemProps> = ({ productData }) => {
   return (
-    <div className='mt-5'>
-      <div className='shadow-sm bg-light flex flex-col  gap-5 p-5 rounded-lg'>
+    <div className=' mt-5'>
+      <div className='shadow-sm bg-light items-center flex flex-col  gap-5 p-5 rounded-lg'>
         <h2 className='h-[2rem] text-center'>{productData.title}</h2>
 
         <Link
