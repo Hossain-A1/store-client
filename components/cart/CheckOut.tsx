@@ -6,6 +6,8 @@ import { cn } from "@/lib/utils";
 import { buttonVariance } from "../ui/Button";
 import { loadStripe } from "@stripe/stripe-js";
 import axios from "axios";
+import { useRouter } from "next/navigation";
+import { userType } from "@/types/user.type";
 
 // Stripe promise//
 const stripePromise = loadStripe(
@@ -17,9 +19,12 @@ if (!stripePromise) {
 
 interface CheckOutProps {
   items: productDataType[];
+  user: userType | null;
 }
 
-const CheckOut: React.FC<CheckOutProps> = ({ items }) => {
+const CheckOut: React.FC<CheckOutProps> = ({ items, user }) => {
+  const router = useRouter();
+
   const total = () => {
     const calcTotal = items.reduce(
       (acc, item) => (acc += item.price * item.count),
@@ -39,10 +44,17 @@ const CheckOut: React.FC<CheckOutProps> = ({ items }) => {
       throw new Error("Failed to load Stripe script");
     }
 
+    if (!user) {
+      router.push("login");
+      return;
+    }
+
     const response = await axios.post(
       `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/create-checkout-session`,
       {
         items: items,
+        productId: items.map((item) => item._id),
+        ...user,
       }
     );
 

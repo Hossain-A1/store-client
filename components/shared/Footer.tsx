@@ -26,16 +26,22 @@ const Footer = () => {
           </li>
 
           <li className=''>
+            <Link href='/about' className=' text-sm'>
+              About
+            </Link>
+          </li>
+          <li className=''>
             <Link href='/products' className=' text-sm'>
               Products
             </Link>
           </li>
-
           <li className=''>
-            <Link href='/login' className=' text-sm'>
-              login
+            <Link href='/services' className=' text-sm'>
+              Services
             </Link>
           </li>
+
+         
         </ul>
 
         <ul className='flex flex-col gap-3 items-center  '>
@@ -50,6 +56,11 @@ const Footer = () => {
           <li className=''>
             <Link href='/contact' className=' text-sm'>
               Contact
+            </Link>
+          </li>
+          <li className=''>
+            <Link href='/login' className=' text-sm'>
+              login
             </Link>
           </li>
         </ul>

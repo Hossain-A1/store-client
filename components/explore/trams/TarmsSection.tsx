@@ -17,7 +17,7 @@ import { BsArrowReturnLeft, BsCashCoin } from "react-icons/bs";
 
 const TarmsSection = () => {
   return (
-    <div className=' container relative'>
+    <div className=' max-md:hidden container relative'>
       <h2 className=' text-2xl font-medium absolute top-2 z-[3]'>
         Shop on Nur store{" "}
       </h2>

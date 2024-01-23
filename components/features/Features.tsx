@@ -18,7 +18,7 @@ const FeatureSection = ({ native }: { native?: FeatureData }) => {
   const { error, isLoading, data: products } = useFetch("/api/products");
 
   return (
-    <div className='container mt-10'>
+    <div className='lg:container mt-10'>
       <SectionTitle subtitle='Our' title='Features' />
 
       {isLoading && <Loading isLoading={isLoading} />}
@@ -27,7 +27,7 @@ const FeatureSection = ({ native }: { native?: FeatureData }) => {
       {!native && products && products?.length > 0 && (
         <>
           <HorizontalTab tabs={["Electonic", "Clothes", "variety"]}>
-            <div className='grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4'>
+            <div className='grid grid-cols-1 lg:grid-cols-3 gap-10 '>
               {products
                 .filter(
                   (item: productDataType) => item.category === "Electronics"
@@ -35,29 +35,29 @@ const FeatureSection = ({ native }: { native?: FeatureData }) => {
                 .sort(
                   (a: productDataType, b: productDataType) => a.price - b.price
                 )
-                .slice(1, 5)
+                .slice(1, 4)
                 .map((item: productDataType) => (
                   <FeatureItem key={item._id} productData={item} />
                 ))}
             </div>
-            <div className='grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4'>
+            <div className='grid grid-cols-1 lg:grid-cols-3 gap-10'>
               {products
                 .filter((item: productDataType) => item.category === "Clothes")
                 .sort(
                   (a: productDataType, b: productDataType) => a.price - b.price
                 )
-                .slice(0, 4)
+                .slice(0, 3)
                 .map((item: productDataType) => (
                   <FeatureItem key={item._id} productData={item} />
                 ))}
             </div>
-            <div className='grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4'>
+            <div className='grid grid-cols-1 lg:grid-cols-3 gap-10'>
               {products
                 .filter((item: productDataType) => item.category === "Variety")
                 .sort(
                   (a: productDataType, b: productDataType) => a.price - b.price
                 )
-                .slice(0, 4)
+                .slice(0, 3)
                 .map((item: productDataType) => (
                   <FeatureItem key={item._id} productData={item} />
                 ))}

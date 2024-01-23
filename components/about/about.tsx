@@ -8,7 +8,7 @@ const About = () => {
   return (
     <section className='container section-p space-y-10 mt-10 '>
       <div className='grid lg:grid-cols-2  grid-cols-1 gap-5 '>
-        <div className='flex max-lg:flex-col max-md:items-center w-full gap-2  bg-green/10 lg:py-10 lg:px-5 rounded-tl-xl'>
+        <div className='flex max-lg:flex-col items-center w-full gap-2  bg-green/10 lg:py-10 lg:px-5 rounded-tl-xl'>
           <div className='bg-light w-1/2 max-md:w-full h-full rounded-xl p-3'>
             <div className='flex flex-col items-end gap-5 place-items-end'>
               <div className='space-y-2'>
@@ -70,13 +70,15 @@ const About = () => {
           </div>
         </div>
 
-        <div className='w-full h-auto rounded-tr-xl space-y-1 py-5 px-2 bg-gray/30'>
+        <div className=' rounded-tr-xl space-y-1 py-5 px-2 bg-gray/30'>
           <h3 className='px-5'>Meet the Team</h3>
           <h2 className='text-xl px-5 font-semibold text-green'>
             {" "}
             Unleashing Support Excellence for Seamless Satisfaction!
           </h2>
-          <div className=' flex  gap-3 p-5 rounded-lg overflow-hidden '>
+      
+
+        <div className=' flex max-lg:flex-col gap-3 p-5 rounded-lg overflow-hidden '>
             <Link
               href='/contact'
               className='h-[12rem] w-full border-8 border-light rounded-md overflow-hidden '
@@ -118,7 +120,7 @@ const About = () => {
             </Link>
           </div>
 
-          <div className=' flex  gap-3 p-5  rounded-lg overflow-hidden'>
+          <div className=' flex max-lg:flex-col  gap-3 p-5  rounded-lg overflow-hidden'>
             <Link
               href='/contact'
               className='h-[12rem] w-full border-8 border-light rounded-md overflow-hidden'
@@ -160,6 +162,7 @@ const About = () => {
             </Link>
           </div>
         </div>
+       
       </div>
       <Mission />
       <PositiveReviews />

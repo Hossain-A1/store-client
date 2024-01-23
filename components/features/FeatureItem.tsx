@@ -29,8 +29,8 @@ const FeatureItem: React.FC<FeatureItemProps> = ({ productData }) => {
           />
         </Link>
 
-        <div className='flex justify-between items-center '>
-          <span className="text-xl font-semibold">
+        <div className='flex justify-between items-center gap-5 '>
+          <span className="text-xl block font-semibold">
             <CurrencyFormatter amount={productData.price} />
           </span>
 

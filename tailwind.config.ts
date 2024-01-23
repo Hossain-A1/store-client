@@ -9,9 +9,9 @@ const config: Config = {
   theme: {
     container: {
       center: true,
-      padding: {
-        default: "1rem",
-        sm: "0",
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
       },
     },
     extend: {
@@ -25,6 +25,7 @@ const config: Config = {
         green: "#00B79F",
         blue: "#00AD6F",
         orange: "#F77F00",
+        orange_dim: "#FC4F00",
         violet: "#7A60B3",
       },
     },

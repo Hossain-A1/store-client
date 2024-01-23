@@ -17,6 +17,11 @@ import { cn } from "@/lib/utils";
 
 const Cart = () => {
   const { cartItems } = useSelector((state: RootState) => state.cart);
+
+  const authUser = useSelector(
+    (state: RootState) => state.auth.userAndToken?.user || null
+  );
+
   const dispatch = useDispatch();
 
   const total = () => {
@@ -50,7 +55,7 @@ const Cart = () => {
             {cartItems.map((item) => (
               <div
                 key={item._id}
-                className='grid grid-cols-3 w-full border-b pb-5'
+                className='grid grid-cols-1 lg:grid-cols-3 w-full border-b pb-5'
               >
                 <div className='flex gap-5 w-full col-span-2'>
                   <div className='w-24 h-24 overflow-hidden'>
@@ -125,15 +130,26 @@ const Cart = () => {
               </div>
             )}
 
-            <div className="flex justify-between">
-            <Button variant='outline' onClick={()=>dispatch(clearCart())}>Clear All cart</Button>
-            <Link href='/products' className={cn(buttonVariance({variant:"success"}))}>Back to Shopping</Link>
+            <div className='flex justify-between max-md:gap-5'>
+              <Button variant='outline' onClick={() => dispatch(clearCart())}>
+                Clear All cart
+              </Button>
+              <Link
+                href='/products'
+                className={cn(buttonVariance({ variant: "success" }))}
+              >
+                Back to Shopping
+              </Link>
             </div>
           </div>
         </div>
 
-        {/* for checkout */}
-        {cartItems.length >= 1 && <CheckOut items={cartItems} />}
+      <div className="w-full">
+          {/* for checkout */}
+          {cartItems.length >= 1 && (
+          <CheckOut items={cartItems} user={authUser} />
+        )}
+      </div>
       </div>
     </section>
   );

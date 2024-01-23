@@ -8,6 +8,7 @@ import toast from "react-hot-toast";
 import { photoUrlChecker } from "@/helpers/photoUrlChecker";
 import { useDispatch } from "react-redux";
 import { login } from "@/redux/features/auth/authSlice";
+import Link from "next/link";
 interface SignupPageData {
   name: string;
   email: string;
@@ -127,6 +128,13 @@ const SignupPage = () => {
           >
             Signup
           </Button>
+
+          <p>
+            <span className='text-black/50'>Already have an account?</span>{" "}
+            <Link href='/login' className='link-item'>
+              Login
+            </Link>
+          </p>
         </div>
       </form>
     </div>

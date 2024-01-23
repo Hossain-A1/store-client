@@ -8,7 +8,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useCallback, useState } from "react";
 import toast from "react-hot-toast";
-import {useDispatch} from "react-redux"
+import { useDispatch } from "react-redux";
 
 interface LoginPageData {
   email: string;
@@ -23,7 +23,7 @@ const LoginPage = () => {
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const router = useRouter();
-const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const handleLogInSubmit = useCallback(
     async (e: React.SyntheticEvent) => {
       e.preventDefault();
@@ -36,8 +36,9 @@ const dispatch = useDispatch()
           email: "",
           password: "",
         });
-        dispatch(login(data))
-        toast.success('Login has successfully!')
+        dispatch(login(data));
+        toast.success("Login has successfully!");
+
         router.push("/");
       } else {
         setIsLoading(false);
@@ -48,12 +49,9 @@ const dispatch = useDispatch()
 
   return (
     <div className='container section-p mt-10  flex flex-col items-center  justify-center gap-5 h-screen  '>
-       <h2>"Log in to explore our products."</h2>
+      <h2>"Log in to explore our products."</h2>
 
-      <form
-        
-        onSubmit={handleLogInSubmit}
-      >
+      <form onSubmit={handleLogInSubmit}>
         {/* sign-in */}
         <div className='flex flex-col gap-3 max-lg:gap-2 w-[20rem] max-lg:w-full max-lg:h-[13rem] h-[20rem] justify-center bg-orange/10 p-10 rounded-lg overflow-hidden mt-10 shadow-2xl'>
           <label htmlFor='email' className='max-lg:text-sm'>
