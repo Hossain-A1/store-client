@@ -37,7 +37,7 @@ const Cart = () => {
 
   return (
     <section className='container section-p mt-10 space-y-5 '>
-      <h2 className='text-center text-2xl font-semibold'>"Shopping Cart"</h2>
+      <h2 className='text-center text-2xl font-semibold'>{"Shopping Cart"}</h2>
       <h2 className='text-center text-xl font-semibold'>
         {cartItems.length >= 1
           ? ` You've added (${cartItems.length}) Cart`
@@ -124,8 +124,8 @@ const Cart = () => {
                   <strong className='font-bold text-xl'>{total()}</strong>{" "}
                 </span>
                 <p className='text-center '>
-                  "The displayed product prices on our site already account for
-                  added taxes."
+                  The displayed product prices on our site already account for
+                  added taxes.
                 </p>
               </div>
             )}
@@ -144,12 +144,12 @@ const Cart = () => {
           </div>
         </div>
 
-      <div className="w-full">
+        <div className='w-full'>
           {/* for checkout */}
           {cartItems.length >= 1 && (
-          <CheckOut items={cartItems} user={authUser} />
-        )}
-      </div>
+            <CheckOut items={cartItems} user={authUser} />
+          )}
+        </div>
       </div>
     </section>
   );

@@ -13,7 +13,7 @@ const Mission = () => {
         </div>
 
         <p className='font-light'>
-          "At Nur, we embark on a mission that goes beyond the transactional
+          {`At Nur, we embark on a mission that goes beyond the transactional
           nature of commerce. Our vision is to foster a community that values
           diversity, embraces individuality, and prioritizes conscious living.
           Through our carefully curated collection spanning clothing,
@@ -31,7 +31,7 @@ const Mission = () => {
           self-expression, conscious consumption, and community building.
           Together, let's create a future where the act of shopping becomes a
           transformative experience, and every product carries the potential to
-          shape a brighter tomorrow."
+          shape a brighter tomorrow.`}
         </p>
       </div>
 
@@ -44,7 +44,7 @@ const Mission = () => {
         </div>
 
         <p className='font-light'>
-          "At Nur, we embark on a mission that goes beyond the transactional
+          {`At Nur, we embark on a mission that goes beyond the transactional
           nature of commerce. Our vision is to foster a community that values
           diversity, embraces individuality, and prioritizes conscious living.
           Through our carefully curated collection spanning clothing,
@@ -60,7 +60,7 @@ const Mission = () => {
           Join us on this journey of self-expression, conscious consumption, and
           community building. Together, let's create a future where the act of
           shopping becomes a transformative experience, and every product
-          carries the potential to shape a brighter tomorrow."
+          carries the potential to shape a brighter tomorrow.`}
         </p>
       </div>
 
@@ -73,7 +73,7 @@ const Mission = () => {
         </div>
 
         <p className='font-light'>
-          Our vision is to continue being a beacon of curated excellence,
+         {` Our vision is to continue being a beacon of curated excellence,
           offering a diverse range of products that elevate lifestyles. We
           strive to set new standards in quality, design, and sustainability,
           ensuring that each item we present reflects our commitment to
@@ -84,7 +84,7 @@ const Mission = () => {
           for a future where Nur Store is not just a retail destination but a
           catalyst for inspired living. Together, let's shape a tomorrow where
           every choice made at Nur is a step towards a more fulfilling and
-          meaningful life.
+          meaningful life.`}
         </p>
       </div>
     </section>

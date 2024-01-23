@@ -44,12 +44,12 @@ const LoginPage = () => {
         setIsLoading(false);
       }
     },
-    [formData, router]
+    [formData, dispatch, router]
   );
 
   return (
     <div className='container section-p mt-10  flex flex-col items-center  justify-center gap-5 h-screen  '>
-      <h2>"Log in to explore our products."</h2>
+      <h2>Log in to explore our products.</h2>
 
       <form onSubmit={handleLogInSubmit}>
         {/* sign-in */}

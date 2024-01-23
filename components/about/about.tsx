@@ -1,5 +1,4 @@
 import Image from "next/image";
-
 import PositiveReviews from "./PositiveReviews";
 import Link from "next/link";
 import Mission from "./Mission";
@@ -19,12 +18,12 @@ const About = () => {
               </div>
 
               <p className='text-sm'>
-                "Nur E-commerce Store is not just a platform; it's a dream
+                {`Nur E-commerce Store is not just a platform; it's a dream
                 turned reality. Our dream is to create a space where every
                 purchase becomes a delightful discovery, where innovation meets
                 affordability, and where our community thrives. Join us in this
                 adventure, and let's build a vibrant and inspired world of
-                possibilities together at Nur E-commerce Store."
+                possibilities together at Nur E-commerce Store.`}
               </p>
             </div>
           </div>
@@ -76,9 +75,8 @@ const About = () => {
             {" "}
             Unleashing Support Excellence for Seamless Satisfaction!
           </h2>
-      
 
-        <div className=' flex max-lg:flex-col gap-3 p-5 rounded-lg overflow-hidden '>
+          <div className=' flex max-lg:flex-col gap-3 p-5 rounded-lg overflow-hidden '>
             <Link
               href='/contact'
               className='h-[12rem] w-full border-8 border-light rounded-md overflow-hidden '
@@ -162,7 +160,6 @@ const About = () => {
             </Link>
           </div>
         </div>
-       
       </div>
       <Mission />
       <PositiveReviews />

@@ -45,7 +45,7 @@ const SignupPage = () => {
             picUrl: "",
           });
           dispatch(login(data));
-          toast.success('Register has successfully!')
+          toast.success("Register has successfully!");
           router.push("/");
         } else {
           setIsLoading(false);
@@ -55,16 +55,13 @@ const SignupPage = () => {
         setIsLoading(false);
       }
     },
-    [formData]
+    [formData, dispatch, router]
   );
   return (
     <div className='container section-p mt-10  flex flex-col items-center  justify-center gap-5 h-screen  '>
-        <h2>"Sign up to explore our products."</h2>
+      <h2>Sign up to explore our products.</h2>
 
-
-      <form onSubmit={handleSignUpSubmit}
-      className="w-[20rem] h-full"
-      >
+      <form onSubmit={handleSignUpSubmit} className='w-[20rem] h-full'>
         {/* sign-in */}
         <div className='flex flex-col gap-3 px-5 py-2 w-full h-full justify-center bg-orange/10  rounded-lg overflow-hidden  shadow-2xl'>
           <label htmlFor='name' className='max-lg:text-sm'>

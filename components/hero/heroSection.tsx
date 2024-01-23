@@ -1,5 +1,5 @@
 import Image from "next/image";
-import  { buttonVariance } from "../ui/Button";
+import { buttonVariance } from "../ui/Button";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
@@ -11,12 +11,17 @@ const heroSection = () => {
           <h2 className='capitalize text-6xl font-light'>
             Discover new collections
           </h2>
-          <p className="text-green/90">
-            "Explore the latest in our signature collections, exclusive
+          <p className='text-green/90'>
+            Explore the latest in our signature collections, exclusive
             collaborations, and fresh arrivals for the new season in our curated
-            selection."
+            selection.
           </p>
-          <Link href='products' className={cn(buttonVariance({variant:'halloween'}))} >Shop new Arrivals</Link>
+          <Link
+            href='products'
+            className={cn(buttonVariance({ variant: "halloween" }))}
+          >
+            Shop new Arrivals
+          </Link>
         </div>
 
         <div className=' w-full h-full flex items-center justify-center'>

@@ -14,14 +14,11 @@ const HorizontalTab: React.FC<HorizontalTabProps> = ({
 }) => {
   const [shouldOpenTab, setShouldOpenTab] = useState<number>(0);
 
-  const buttonClick = useCallback(
-    (i: number) => {
-      setShouldOpenTab(i);
+  const buttonClick = useCallback((i: number) => {
+    setShouldOpenTab(i);
 
-      onclick && onclick;
-    },
-    [onClick]
-  );
+    onclick && onclick;
+  }, []);
   return (
     <div className='container px-5 '>
       <div className='flex items-center justify-center'>
