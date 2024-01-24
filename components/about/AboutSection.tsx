@@ -3,7 +3,7 @@ import PositiveReviews from "./PositiveReviews";
 import Link from "next/link";
 import Mission from "./Mission";
 
-const About = () => {
+const AboutSection = () => {
   return (
     <section className='container section-p space-y-10 mt-10 '>
       <div className='grid lg:grid-cols-2  grid-cols-1 gap-5 '>
@@ -167,4 +167,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default AboutSection;
